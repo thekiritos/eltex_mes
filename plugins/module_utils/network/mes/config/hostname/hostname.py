@@ -1,36 +1,36 @@
-#
 # -*- coding: utf-8 -*-
 # Copyright 2022 Red Hat
+# Copyright 2025 Nikita Mishagin
+# Modified from cisco.ios to Eltex MES
 # GNU General Public License v3.0+
 # (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
-#
-
-from __future__ import absolute_import, division, print_function
-
-
-__metaclass__ = type
 
 """
-The ios_hostname config file.
+The mes_hostname config file.
 It is in this file where the current configuration (as dict)
 is compared to the provided configuration (as dict) and the command set
 necessary to bring the current configuration to its desired end-state is
 created.
 """
 
+from __future__ import absolute_import, division, print_function
+
+
+__metaclass__ = type
+
 from ansible_collections.ansible.netcommon.plugins.module_utils.network.common.rm_base.resource_module import (
     ResourceModule,
 )
 
 from ansible_collections.cisco.ios.plugins.module_utils.network.ios.facts.facts import Facts
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.rm_templates.hostname import (
+from nikitamishagin.mes.plugins.module_utils.network.mes.rm_templates.hostname import (
     HostnameTemplate,
 )
 
 
 class Hostname(ResourceModule):
     """
-    The ios_hostname config class
+    The mes_hostname config class
     """
 
     def __init__(self, module):

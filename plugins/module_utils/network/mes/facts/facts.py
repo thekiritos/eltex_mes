@@ -1,10 +1,12 @@
-#
 # -*- coding: utf-8 -*-
 # Copyright 2019 Red Hat
+# Copyright 2025 Nikita Mishagin
+# Modified from cisco.ios to Eltex MES
 # GNU General Public License v3.0+
 # (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
+
 """
-The facts class for ios
+The facts class for mes
 this file validates each subset of facts and selectively
 calls the appropriate facts gathering function
 """

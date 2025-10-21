@@ -297,10 +297,10 @@ parsed:
 
 from ansible.module_utils.basic import AnsibleModule
 
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.argspec.hostname.hostname import (
+from nikitamishagin.mes.plugins.module_utils.network.mes.argspec.hostname.hostname import (
     HostnameArgs,
 )
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.config.hostname.hostname import (
+from nikitamishagin.mes.plugins.module_utils.network.mes.config.hostname.hostname import (
     Hostname,
 )
 
