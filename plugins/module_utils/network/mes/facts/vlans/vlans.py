@@ -1,10 +1,10 @@
-#
 # -*- coding: utf-8 -*-
 # Copyright 2019 Red Hat
 # GNU General Public License v3.0+
 # (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
+
 """
-The ios vlans fact class
+The mes vlans fact class
 It is in this file the configuration is collected from the device
 for a given resource, parsed, and the facts tree is populated
 based on the configuration.
@@ -20,16 +20,16 @@ from copy import deepcopy
 
 from ansible_collections.ansible.netcommon.plugins.module_utils.network.common import utils
 
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.argspec.vlans.vlans import (
+from nikitamishagin.mes.plugins.module_utils.network.mes.argspec.vlans.vlans import (
     VlansArgs,
 )
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.rm_templates.vlans import (
+from nikitamishagin.mes.plugins.module_utils.network.mes.rm_templates.vlans import (
     VlansTemplate,
 )
 
 
 class VlansFacts(object):
-    """The ios vlans fact class"""
+    """The mes vlans fact class"""
 
     def __init__(self, module, subspec="config", options="options"):
         self._module = module
@@ -46,7 +46,8 @@ class VlansFacts(object):
         self.generated_spec = utils.generate_dict(facts_argument_spec)
 
     def get_vlans_data(self, connection):
-        """Checks device is L2/L3 and returns
+        """
+        Checks device is L2/L3 and returns
         facts gracefully. Does not fail module.
         """
         check_os_type = connection.get_device_info()
@@ -55,10 +56,11 @@ class VlansFacts(object):
         return connection.get("show vlan")
 
     def get_vlan_conf_data(self, connection):
-        return connection.get("show running-config | section ^vlan configuration .+")
+        return connection.get("show running-config | section ^vlan configuration .+") ### TODO: Rewrite because there's no same command for MES
 
     def populate_vlans_config_facts(self, connection, data=None):
-        """Process config for Vlans Configurations
+        """
+        Process config for Vlans Configurations
 
         :param connection: the device connection
         :param ansible_facts: Facts dictionary
@@ -79,7 +81,8 @@ class VlansFacts(object):
         return vlan_configurations_parser.parse()
 
     def populate_facts(self, connection, ansible_facts, data=None):
-        """Populate the facts for vlans
+        """
+        Populate the facts for vlans
         :param connection: the device connection
         :param ansible_facts: Facts dictionary
         :param data: previously collected conf

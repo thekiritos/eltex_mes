@@ -23,7 +23,7 @@
 #############################################
 
 """
-The arg spec for the ios_vlans module
+The arg spec for the mes_vlans module
 """
 
 from __future__ import absolute_import, division, print_function
@@ -33,7 +33,7 @@ __metaclass__ = type
 
 
 class VlansArgs(object):
-    """The arg spec for the ios_vlans module"""
+    """The arg spec for the mes_vlans module"""
 
     def __init__(self, **kwargs):
         pass

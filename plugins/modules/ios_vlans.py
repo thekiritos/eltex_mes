@@ -16,7 +16,7 @@
 # along with Ansible.  If not, see <http://www.gnu.org/licenses/>.
 #
 """
-The module file for ios_vlans
+The module file for mes_vlans
 """
 from __future__ import absolute_import, division, print_function
 
@@ -24,10 +24,10 @@ from __future__ import absolute_import, division, print_function
 __metaclass__ = type
 
 DOCUMENTATION = """
-module: ios_vlans
+module: mes_vlans
 short_description: Resource module to configure VLANs.
 description:
-  This module provides declarative management of VLANs on Cisco IOS network
+  This module provides declarative management of VLANs on Eltex MES network
   devices.
 version_added: 1.0.0
 author:
@@ -1325,11 +1325,11 @@ parsed:
 
 from ansible.module_utils.basic import AnsibleModule
 
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.argspec.vlans.vlans import (
+from nikitamishagin.mes.plugins.module_utils.network.mes.argspec.vlans.vlans import (
     VlansArgs,
 )
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.config.vlans.vlans import Vlans
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.ios import get_connection
+from nikitamishagin.mes.plugins.module_utils.network.mes.config.vlans.vlans import Vlans
+from nikitamishagin.mes.plugins.module_utils.network.mes.ios import get_connection
 
 
 def _is_l2_device(module):

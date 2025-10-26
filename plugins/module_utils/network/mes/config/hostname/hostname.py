@@ -22,7 +22,7 @@ from ansible_collections.ansible.netcommon.plugins.module_utils.network.common.r
     ResourceModule,
 )
 
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.facts.facts import Facts
+from nikitamishagin.mes.plugins.module_utils.network.mes.facts.facts import Facts
 from nikitamishagin.mes.plugins.module_utils.network.mes.rm_templates.hostname import (
     HostnameTemplate,
 )
