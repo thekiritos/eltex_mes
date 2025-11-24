@@ -10,6 +10,10 @@ Eltex-specific adaptations following the roadmap below.
 
 I’m happy to receive any suggestions, ideas, and support for creating this collection. Thank you!
 
+**If you need a quick way** to make a cisco.ios module work with Eltex devices (just to get it working), check out
+[this section](#old-description-files-in-archive). This is how my project started and how I adapted the module for
+my needs.
+
 ## Common plan for improvement
 
 - [x] Fork the Ansible cisco.ios collection
@@ -33,7 +37,7 @@ Ansible Cisco IOS Collection: https://github.com/ansible-collections/cisco.ios
 - Compiled a list of modules suitable for adaptation to Eltex.
 - Added an important development task: implement getting facts.
 
-### List of modules that can be adapted for Eltex (series 23xx/33xx/53xx/54xx) 
+### List of modules that can be adapted for Eltex (series 23xx/33xx/53xx/54xx)
 
 High applicability (expected to be adaptable):
 
@@ -88,17 +92,21 @@ Low applicability/typically not supported on MES:
 Playbooks for automating routine administration tasks of Eltex switches.
 (mes2100, mes2300, mes3300, mes3500, mes5300 series.)
 
-Modules ios_command and ios_config are suitable (almost) for work with Eltex switches. I made two changes to the
+Modules ios_command and ios_config are (almost) suitable for working with Eltex switches. I made two changes to the
 modules:
 
-/usr/lib/python3/dist-packages/ansible_collections/cisco/ios/plugins/cliconf/ios.py
-self.send_command("configure terminal") // "configure terminal" -> "configure"
+1. File `/ansible_collections/cisco/ios/plugins/cliconf/ios.py`. You need to replace the following command:
+   `self.send_command("configure terminal")` // "configure terminal" -> "configure"
+2. File `/ansible_collections/cisco/ios/plugins/terminal/ios.py`. You need to replace the following command:
+   `self._exec_cli_command(b"terminal length 0")` // "terminal length 0" -> "terminal datadump"
 
-/usr/lib/python3/dist-packages/ansible_collections/cisco/ios/plugins/terminal/ios.py
-self._exec_cli_command(b"terminal lenght 0") // "terminal lenght 0" -> "terminal datadump"
+These changes will let you use some basic cisco.ios modules with Eltex MES devices.
 
-This made it possible to use modules for Eltex.
+Also you can see my old playbooks for some tasks:
 
-mes-upgrade.yml - playbook for downloading new firmware images;
-mes-schedule.yml - playbook for restarting switches on a schedule;
-*.textfsm - templates for parsing.
+- `./archive/mes-upgrade.yml` - playbook for downloading new firmware images;
+- `./archive/mes-schedule.yml` - playbook for restarting switches on a schedule;
+- `./archive/mes-ntp-check.yml` - playbook for configuring NTP servers;
+- `./archive/mes2300-global-config.yml` - playbook for configuring global parameters.
+
+`*.textfsm` - templates for parsing.
