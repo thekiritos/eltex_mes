@@ -1,4 +1,4 @@
-# Eltex Ansible Project
+# Eltex MES Collection
 
 **PROJECT UNDER DEVELOPMENT**
 
