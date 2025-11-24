@@ -33,7 +33,7 @@ Ansible Cisco IOS Collection: https://github.com/ansible-collections/cisco.ios
 - Compiled a list of modules suitable for adaptation to Eltex.
 - Added an important development task: implement getting facts.
 
-### List of modules that can be adapted for Eltex (series 23xx/33xx/53xx/63xx/75xx)
+### List of modules that can be adapted for Eltex (series 23xx/33xx/53xx/54xx) 
 
 High applicability (expected to be adaptable):
 
