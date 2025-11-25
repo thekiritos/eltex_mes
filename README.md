@@ -100,7 +100,8 @@ modules:
 2. File `/ansible_collections/cisco/ios/plugins/terminal/ios.py`. You need to replace the following command:
    `self._exec_cli_command(b"terminal length 0")` // "terminal length 0" -> "terminal datadump"
 
-These changes will let you use some basic cisco.ios modules with Eltex MES devices.
+These changes will let you use some basic cisco.ios modules with Eltex MES devices. But you should not use a
+`gather_facts` function, because it will not work correctly. Set `gather_facts: false` in your playbook by default.
 
 Also you can see my old playbooks for some tasks:
 
