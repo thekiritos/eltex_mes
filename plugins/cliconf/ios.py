@@ -18,45 +18,19 @@
 #
 from __future__ import absolute_import, division, print_function
 
-
 __metaclass__ = type
 
+# Note: commit-confirm workflow from Cisco IOS is not supported on Eltex MES.
 DOCUMENTATION = """
 author:
 - Ansible Networking Team (@ansible-network)
-name: ios
-short_description: Use ios cliconf to run command on Cisco IOS platform
+name: mes
+short_description: Use mes cliconf to run commands on Eltex MES platform
 description:
-- This ios plugin provides low level abstraction apis for sending and receiving CLI
-  commands from Cisco IOS network devices.
+- This mes plugin provides low-level abstraction APIs for sending and receiving CLI
+  commands from Eltex MES network devices.
 version_added: 1.0.0
 options:
-  commit_confirm_immediate:
-    type: boolean
-    default: false
-    description:
-    - Enable or disable commit confirm mode.
-    - Confirms the configuration pushed after a custom/ default timeout.(default 1 minute).
-    - For custom timeout configuration set commit_confirm_timeout value.
-    - On commit_confirm_immediate default value for commit_confirm_timeout is considered 1 minute
-      when variable in not explicitly declared.
-    env:
-    - name: ANSIBLE_IOS_COMMIT_CONFIRM_IMMEDIATE
-    vars:
-    - name: ansible_ios_commit_confirm_immediate
-  commit_confirm_timeout:
-    type: int
-    description:
-    - Commits the configuration on a trial basis for the time
-      specified in minutes.
-    - Using commit_confirm_timeout without specifying commit_confirm_immediate would
-      need an explicit C(configure confirm) using the ios_command module
-      to confirm/commit the changes made.
-    - Refer to example for a use case demonstration.
-    env:
-    - name: ANSIBLE_IOS_COMMIT_CONFIRM_TIMEOUT
-    vars:
-    - name: ansible_ios_commit_confirm_timeout
   config_commands:
     description:
     - Specifies a list of commands that can make configuration changes
@@ -68,71 +42,17 @@ options:
     elements: str
     default: []
     vars:
-    - name: ansible_ios_config_commands
+    - name: ansible_mes_config_commands
 """
 
 EXAMPLES = """
-# NOTE - IOS waits for a `configure confirm` when the configure terminal
-# command executed is `configure terminal revert timer <timeout>` within the timeout
-# period for the configuration to commit successfully, else a rollback
-# happens.
-
-# Use commit confirm with timeout and confirm the commit explicitly
-
-- name: Example commit confirmed
-  vars:
-    ansible_ios_commit_confirm_timeout: 1
+- name: Set hostname on Eltex MES
   tasks:
-    - name: "Commit confirmed with timeout"
-      cisco.ios.ios_hostname:
+    - name: Configure hostname
+      nikitamishagin.eltex_mes.mes_hostname:
         state: merged
         config:
-          hostname: R1
-
-    - name: "Confirm the Commit"
-      cisco.ios.ios_command:
-        commands:
-          - configure confirm
-
-# Commands fired
-# - configure terminal revert timer 1 (cliconf specific)
-# - hostname R1 (from hostname resource module)
-# - configure confirm (from ios_command module)
-
-# Use commit confirm with timeout and confirm the commit via cliconf
-
-- name: Example commit confirmed
-  vars:
-    ansible_ios_commit_confirm_immediate: True
-    ansible_ios_commit_confirm_timeout: 3
-  tasks:
-    - name: "Commit confirmed with timeout"
-      cisco.ios.ios_hostname:
-        state: merged
-        config:
-          hostname: R1
-
-# Commands fired
-# - configure terminal revert timer 3 (cliconf specific)
-# - hostname R1 (from hostname resource module)
-# - configure confirm (cliconf specific)
-
-# Use commit confirm via cliconf using default timeout
-
-- name: Example commit confirmed
-  vars:
-    ansible_ios_commit_confirm_immediate: True
-  tasks:
-    - name: "Commit confirmed with timeout"
-      cisco.ios.ios_hostname:
-        state: merged
-        config:
-          hostname: R1
-
-# Commands fired
-# - configure terminal revert timer 1 (cliconf specific with default timeout)
-# - hostname R1 (from hostname resource module)
-# - configure confirm (cliconf specific)
+          hostname: SW1
 
 """
 
@@ -275,45 +195,11 @@ class Cliconf(CliconfBase):
     @enable_mode
     def configure(self):
         """
-        Enter global configuration mode based on the
-        status of commit_confirm
+        Enter global configuration mode
         :return: None
         """
-        if self.get_option("commit_confirm_timeout") or self.get_option("commit_confirm_immediate"):
-            commit_timeout = (
-                self.get_option("commit_confirm_timeout")
-                if self.get_option("commit_confirm_timeout")
-                else 1
-            )  # add default timeout not default: 1 to support above or operation
-
-            persistent_command_timeout = self._connection.get_option("persistent_command_timeout")
-            # check archive state
-            archive_state = self.send_command("show archive")
-            rollback_state = self.send_command("show archive config rollback timer")
-
-            if persistent_command_timeout > commit_timeout * 60:
-                raise ValueError(
-                    "ansible_command_timeout can't be greater than commit_confirm_timeout "
-                    "Please adjust and try again",
-                )
-
-            if re.search(r"Archive.*not.enabled", archive_state):
-                raise ValueError(
-                    "commit_confirm_immediate option set, but archiving "
-                    "not enabled on device. "
-                    "Please set up archiving and try again",
-                )
-
-            if not re.search(r"%No Rollback Confirmed Change pending", rollback_state):
-                raise ValueError(
-                    "Existing rollback change already pending. "
-                    "Please resolve by issuing 'configure confirm' "
-                    "or 'configure revert now'",
-                )
-
-            self.send_command(f"configure terminal revert timer {commit_timeout}")
-        else:
-            self.send_command("configure terminal")
+        # Enter configuration mode on Eltex MES
+        self.send_command("configure")
 
     @enable_mode
     def edit_config(self, candidate=None, commit=True, replace=None, comment=None):
@@ -323,23 +209,21 @@ class Cliconf(CliconfBase):
 
         results = []
         requests = []
-        # commit confirm specific attributes
-        commit_confirm = self.get_option("commit_confirm_immediate")
         if commit:
             self.configure()
-            for line in to_list(candidate):
-                if not isinstance(line, Mapping):
-                    line = {"command": line}
+            try:
+                for line in to_list(candidate):
+                    if not isinstance(line, Mapping):
+                        line = {"command": line}
 
-                cmd = line["command"]
-                if cmd != "end" and cmd[0] != "!":
-                    results.append(self.send_command(**line))
-                    requests.append(cmd)
+                    cmd = line["command"]
+                    if cmd != "end" and cmd[0] != "!":
+                        results.append(self.send_command(**line))
+                        requests.append(cmd)
 
-            self.send_command("end")
-            if commit_confirm:
-                self.send_command("configure confirm")
-
+            finally:
+                # guaranteed exit from configuration mode
+                self.send_command("end")
         else:
             raise ValueError("check mode is not supported")
 
@@ -349,7 +233,7 @@ class Cliconf(CliconfBase):
 
     def edit_macro(self, candidate=None, commit=True, replace=None, comment=None):
         """
-        ios_config:
+        mes_config:
           lines: "{{ macro_lines }}"
           parents: "macro name {{ macro_name }}"
           after: '@'
@@ -364,7 +248,7 @@ class Cliconf(CliconfBase):
         requests = []
         if commit:
             commands = ""
-            self.send_command("config terminal")
+            self.send_command("configure")
             time.sleep(0.1)
             # first item: macro command
             commands += candidate.pop(0) + "\n"
@@ -422,24 +306,32 @@ class Cliconf(CliconfBase):
         if not self._device_info:
             device_info = {}
 
-            device_info["network_os"] = "ios"
+            device_info["network_os"] = "mes"
             # Ensure we are not in config mode
             self._update_cli_prompt_context(config_context=")#", exit_command="end")
             reply = self.get(command="show version")
             data = to_text(reply, errors="surrogate_or_strict").strip()
-            match = re.search(r"Version (\S+)", data)
+            # Try common Eltex version markers first, then fall back to a generic 'Version'
+            # TODO: Request "show version" outputs to validate these templates.
+            match = (
+                    re.search(r"Software Version\s*[:]?\s*(\S+)", data, re.I)
+                    or re.search(r"SW(?:\s+)?version\s*[:]?\s*(\S+)", data, re.I)
+                    or re.search(r"Version (\S+)", data)
+            )
             if match:
                 device_info["network_os_version"] = match.group(1).strip(",")
 
-            model_search_strs = [
-                r"^[Cc]isco (.+) \(revision",
-                r"^[Cc]isco (\S+).+bytes of .*memory",
+            # Identify model for Eltex MES; try several patterns
+            model_patterns = [
+                r"^ELTEX\s+(MES\S+)",
+                r"^Product\s+name\s*[:]?\s*(MES\S+)",
+                r"^System\s+type\s*[:]?\s*(MES\S+)",
+                r"\b(MES\d+\w*)\b",
             ]
-            for item in model_search_strs:
-                match = re.search(item, data, re.M)
-                if match:
-                    version = match.group(1).split(" ")
-                    device_info["network_os_model"] = version[0]
+            for pat in model_patterns:
+                m_model = re.search(pat, data, re.M | re.I)
+                if m_model:
+                    device_info["network_os_model"] = m_model.group(1)
                     break
 
             match = re.search(r"^(.+) uptime", data, re.M)
