@@ -32,7 +32,7 @@ from ansible_collections.ansible.netcommon.plugins.plugin_utils.terminal_base im
 
 display = Display()
 
-
+# TODO: Request prompts to validate it
 class TerminalModule(TerminalBase):
     terminal_stdout_re = [
         re.compile(rb"[\r\n]?[\w\+\-\.:\/\[\]]+(?:\([^\)]+\)){0,3}(?:[>#]) ?$"),
@@ -72,6 +72,7 @@ class TerminalModule(TerminalBase):
 
     terminal_config_prompt = re.compile(r"^.+\(config(-.*)?\)#$")
 
+    # TODO: Request 'show privilege' command output to validate it
     def get_privilege_level(self):
         try:
             cmd = {"command": "show privilege"}
@@ -94,27 +95,14 @@ class TerminalModule(TerminalBase):
     def on_open_shell(self):
         _is_sdWan = False  # initialize to false for default IOS execution
         try:
-            self._exec_cli_command(b"terminal length 0")
-        except AnsibleConnectionFailure:
-            try:
-                self._exec_cli_command(b"screen-length 0")  # support to SD-WAN mode
-                _is_sdWan = True
-            except AnsibleConnectionFailure:  # fails as length required for handling prompt
-                raise AnsibleConnectionFailure("unable to set terminal parameters")
-        try:
-            if _is_sdWan:
-                self._exec_cli_command(b"screen-width 512")  # support to SD-WAN mode
-            else:
-                self._exec_cli_command(b"terminal width 512")
-                try:
-                    self._exec_cli_command(b"terminal width 0")
-                except AnsibleConnectionFailure:
-                    pass
+            self._exec_cli_command(b"terminal datadump")
+        # Other deleted because eltex doesnt support it.
         except AnsibleConnectionFailure:
             display.display(
-                "WARNING: Unable to set terminal/screen width, command responses may be truncated",
+                "WARNING: Unable to set terminal datadump, command responses may be truncated",
             )
 
+    # TODO: Check password prompt in MES devices
     def on_become(self, passwd=None):
         if self._get_prompt().endswith(b"#") and self.get_privilege_level() == 15:
             return
