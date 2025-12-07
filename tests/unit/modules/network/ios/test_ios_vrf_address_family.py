@@ -25,8 +25,8 @@ __metaclass__ = type
 from textwrap import dedent
 from unittest.mock import patch
 
-from ansible_collections.cisco.ios.plugins.modules import ios_vrf_address_family
-from ansible_collections.cisco.ios.tests.unit.modules.utils import set_module_args
+from ansible_collections.nikitamishagin.eltex_mes.plugins.modules import ios_vrf_address_family
+from ansible_collections.nikitamishagin.eltex_mes.tests.unit.modules.utils import set_module_args
 
 from .ios_module import TestIosModule
 
@@ -47,7 +47,7 @@ class TestIosVrfAddressFamilyModule(TestIosModule):
         self.get_resource_connection = self.mock_get_resource_connection.start()
 
         self.mock_get_config = patch(
-            "ansible_collections.cisco.ios.plugins.module_utils.network.ios.facts.vrf_address_family.vrf_address_family."
+            "ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.facts.vrf_address_family.vrf_address_family."
             "Vrf_address_familyFacts.get_config",
         )
         self.get_config = self.mock_get_config.start()

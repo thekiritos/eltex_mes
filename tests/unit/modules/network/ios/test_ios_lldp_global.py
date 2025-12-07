@@ -10,8 +10,8 @@ __metaclass__ = type
 from textwrap import dedent
 from unittest.mock import patch
 
-from ansible_collections.cisco.ios.plugins.modules import ios_lldp_global
-from ansible_collections.cisco.ios.tests.unit.modules.utils import set_module_args
+from ansible_collections.nikitamishagin.eltex_mes.plugins.modules import ios_lldp_global
+from ansible_collections.nikitamishagin.eltex_mes.tests.unit.modules.utils import set_module_args
 
 from .ios_module import TestIosModule
 
@@ -45,12 +45,12 @@ class TestIosLldpGlobalModule(TestIosModule):
         self.get_resource_connection_facts = self.mock_get_resource_connection_facts.start()
 
         self.mock_edit_config = patch(
-            "ansible_collections.cisco.ios.plugins.module_utils.network.ios.providers.providers.CliProvider.edit_config",
+            "ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.providers.providers.CliProvider.edit_config",
         )
         self.edit_config = self.mock_edit_config.start()
 
         self.mock_execute_show_command = patch(
-            "ansible_collections.cisco.ios.plugins.module_utils.network.ios.facts.lldp_global.lldp_global."
+            "ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.facts.lldp_global.lldp_global."
             "Lldp_globalFacts.get_lldp_global_data",
         )
         self.execute_show_command = self.mock_execute_show_command.start()
