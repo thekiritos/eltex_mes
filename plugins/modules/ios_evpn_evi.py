@@ -504,11 +504,10 @@ commands:
 """
 
 from ansible.module_utils.basic import AnsibleModule
-
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.argspec.evpn_evi.evpn_evi import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.argspec.evpn_evi.evpn_evi import (
     Evpn_eviArgs,
 )
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.config.evpn_evi.evpn_evi import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.config.evpn_evi.evpn_evi import (
     Evpn_evi,
 )
 

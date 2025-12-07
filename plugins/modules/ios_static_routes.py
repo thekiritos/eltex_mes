@@ -977,11 +977,10 @@ parsed:
 
 
 from ansible.module_utils.basic import AnsibleModule
-
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.argspec.static_routes.static_routes import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.argspec.static_routes.static_routes import (
     Static_routesArgs,
 )
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.config.static_routes.static_routes import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.config.static_routes.static_routes import (
     Static_routes,
 )
 

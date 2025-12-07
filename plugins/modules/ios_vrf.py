@@ -353,8 +353,7 @@ from ansible.module_utils.connection import exec_command
 from ansible_collections.ansible.netcommon.plugins.module_utils.network.common.config import (
     NetworkConfig,
 )
-
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.ios import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.ios import (
     get_config,
     load_config,
 )

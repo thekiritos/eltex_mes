@@ -21,9 +21,10 @@ __metaclass__ = type
 from ansible_collections.ansible.netcommon.plugins.module_utils.network.common.rm_base.resource_module import (
     ResourceModule,
 )
-
-from nikitamishagin.mes.plugins.module_utils.network.mes.facts.facts import Facts
-from nikitamishagin.mes.plugins.module_utils.network.mes.rm_templates.hostname import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.mes.facts.facts import (
+    Facts,
+)
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.mes.rm_templates.hostname import (
     HostnameTemplate,
 )
 

@@ -1324,12 +1324,15 @@ parsed:
 """
 
 from ansible.module_utils.basic import AnsibleModule
-
-from nikitamishagin.mes.plugins.module_utils.network.mes.argspec.vlans.vlans import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.mes.argspec.vlans.vlans import (
     VlansArgs,
 )
-from nikitamishagin.mes.plugins.module_utils.network.mes.config.vlans.vlans import Vlans
-from nikitamishagin.mes.plugins.module_utils.network.mes.ios import get_connection
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.mes.config.vlans.vlans import (
+    Vlans,
+)
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.mes.ios import (
+    get_connection,
+)
 
 
 def _is_l2_device(module):

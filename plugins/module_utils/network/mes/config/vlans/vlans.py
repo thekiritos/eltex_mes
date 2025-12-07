@@ -25,9 +25,10 @@ from ansible_collections.ansible.netcommon.plugins.module_utils.network.common.r
 from ansible_collections.ansible.netcommon.plugins.module_utils.network.common.utils import (
     dict_merge,
 )
-
-from nikitamishagin.mes.plugins.module_utils.network.mes.facts.facts import Facts
-from nikitamishagin.mes.plugins.module_utils.network.mes.rm_templates.vlans import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.mes.facts.facts import (
+    Facts,
+)
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.mes.rm_templates.vlans import (
     VlansTemplate,
 )
 

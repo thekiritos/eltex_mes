@@ -370,8 +370,7 @@ from ansible_collections.ansible.netcommon.plugins.module_utils.network.common.c
     NetworkConfig,
     dumps,
 )
-
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.ios import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.ios import (
     get_config,
     get_connection,
     get_defaults_flag,

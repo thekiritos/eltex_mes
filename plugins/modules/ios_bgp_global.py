@@ -2852,11 +2852,10 @@ parsed:
 """
 
 from ansible.module_utils.basic import AnsibleModule
-
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.argspec.bgp_global.bgp_global import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.argspec.bgp_global.bgp_global import (
     Bgp_globalArgs,
 )
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.config.bgp_global.bgp_global import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.config.bgp_global.bgp_global import (
     Bgp_global,
 )
 

@@ -2322,11 +2322,10 @@ commands:
 """
 
 from ansible.module_utils.basic import AnsibleModule
-
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.argspec.route_maps.route_maps import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.argspec.route_maps.route_maps import (
     Route_mapsArgs,
 )
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.config.route_maps.route_maps import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.config.route_maps.route_maps import (
     Route_maps,
 )
 

@@ -19,11 +19,10 @@ __metaclass__ = type
 from copy import deepcopy
 
 from ansible_collections.ansible.netcommon.plugins.module_utils.network.common import utils
-
-from nikitamishagin.mes.plugins.module_utils.network.mes.argspec.vlans.vlans import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.mes.argspec.vlans.vlans import (
     VlansArgs,
 )
-from nikitamishagin.mes.plugins.module_utils.network.mes.rm_templates.vlans import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.mes.rm_templates.vlans import (
     VlansTemplate,
 )
 
@@ -56,7 +55,9 @@ class VlansFacts(object):
         return connection.get("show vlan")
 
     def get_vlan_conf_data(self, connection):
-        return connection.get("show running-config | section ^vlan configuration .+") ### TODO: Rewrite because there's no same command for MES
+        return connection.get(
+            "show running-config | section ^vlan configuration .+",
+        )  ### TODO: Rewrite because there's no same command for MES
 
     def populate_vlans_config_facts(self, connection, data=None):
         """

@@ -2207,11 +2207,10 @@ parsed:
 
 
 from ansible.module_utils.basic import AnsibleModule
-
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.argspec.ospfv3.ospfv3 import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.argspec.ospfv3.ospfv3 import (
     Ospfv3Args,
 )
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.config.ospfv3.ospfv3 import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.config.ospfv3.ospfv3 import (
     Ospfv3,
 )
 

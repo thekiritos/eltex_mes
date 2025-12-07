@@ -320,11 +320,10 @@ commands:
 """
 
 from ansible.module_utils.basic import AnsibleModule
-
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.argspec.lldp_global.lldp_global import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.argspec.lldp_global.lldp_global import (
     Lldp_globalArgs,
 )
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.config.lldp_global.lldp_global import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.config.lldp_global.lldp_global import (
     Lldp_global,
 )
 

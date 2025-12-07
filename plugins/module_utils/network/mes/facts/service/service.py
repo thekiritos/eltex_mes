@@ -16,11 +16,10 @@ based on the configuration.
 """
 
 from ansible_collections.ansible.netcommon.plugins.module_utils.network.common import utils
-
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.argspec.service.service import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.argspec.service.service import (
     ServiceArgs,
 )
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.rm_templates.service import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.rm_templates.service import (
     ServiceTemplate,
 )
 

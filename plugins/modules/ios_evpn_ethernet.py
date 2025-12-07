@@ -971,11 +971,10 @@ parsed:
 """
 
 from ansible.module_utils.basic import AnsibleModule
-
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.argspec.evpn_ethernet.evpn_ethernet import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.argspec.evpn_ethernet.evpn_ethernet import (
     Evpn_ethernetArgs,
 )
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.config.evpn_ethernet.evpn_ethernet import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.config.evpn_ethernet.evpn_ethernet import (
     Evpn_ethernet,
 )
 

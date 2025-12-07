@@ -16,14 +16,13 @@ based on the configuration.
 """
 
 from ansible_collections.ansible.netcommon.plugins.module_utils.network.common import utils
-
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.argspec.static_routes.static_routes import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.argspec.static_routes.static_routes import (
     Static_routesArgs,
 )
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.rm_templates.static_routes import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.rm_templates.static_routes import (
     Static_routesTemplate,
 )
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.utils.utils import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.utils.utils import (
     netmask_to_cidr,
 )
 

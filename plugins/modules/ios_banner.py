@@ -110,8 +110,7 @@ commands:
 from re import M, search
 
 from ansible.module_utils.basic import AnsibleModule
-
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.ios import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.ios import (
     get_config,
     load_config,
 )
