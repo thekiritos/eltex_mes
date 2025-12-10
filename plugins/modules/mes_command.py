@@ -32,8 +32,6 @@ description:
     L(ios_config,https://docs.ansible.com/ansible/latest/collections/cisco/ios/ios_config_module.html#ansible-collections-cisco-ios-ios-config-module)
     to configure IOS devices.
 version_added: 1.0.0
-extends_documentation_fragment:
-  - cisco.ios.ios
 notes:
   - Tested against Cisco IOSXE Version 17.3 on CML.
   - This module works with connection C(network_cli).

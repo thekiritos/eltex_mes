@@ -27,8 +27,6 @@ description:
   - This will configure both login and motd banners on remote devices running Cisco
     IOS. It allows playbooks to add or remote banner text from the active running configuration.
 version_added: 1.0.0
-extends_documentation_fragment:
-  - cisco.ios.ios
 notes:
   - Tested against Cisco IOSXE Version 17.3 on CML.
   - This module works with connection C(network_cli).

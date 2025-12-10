@@ -29,8 +29,6 @@ description:
     devices.  It provides an option to configure host system parameters or remove those
     parameters from the device active configuration.
 version_added: 1.0.0
-extends_documentation_fragment:
-  - cisco.ios.ios
 notes:
   - Tested against Cisco IOSXE Version 17.3 on CML.
   - This module works with connection C(network_cli).

@@ -29,8 +29,6 @@ description:
     into sections.  This module provides an implementation for working with IOS configuration
     sections in a deterministic way.
 version_added: 1.0.0
-extends_documentation_fragment:
-  - cisco.ios.ios
 notes:
   - Tested against Cisco IOSXE Version 17.3 on CML.
   - Abbreviated commands are NOT idempotent, see

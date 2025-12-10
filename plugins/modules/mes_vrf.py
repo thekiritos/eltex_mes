@@ -28,8 +28,6 @@ description:
     allows playbooks to manage individual or the entire VRF collection.  It also supports
     purging VRF definitions from the configuration that are not explicitly defined.
 version_added: 1.0.0
-extends_documentation_fragment:
-  - cisco.ios.ios
 notes:
   - Tested against Cisco IOSXE Version 17.3 on CML.
   - This module works with connection C(network_cli).

@@ -16,8 +16,6 @@ __metaclass__ = type
 DOCUMENTATION = """
 ---
 module: ios_vrf_interfaces
-extends_documentation_fragment:
-  - cisco.ios.ios
 short_description: Manages VRF configuration on interfaces.
 description:
   - Manages Virtual Routing and Forwarding (VRF) configuration on interfaces of Cisco IOS devices.

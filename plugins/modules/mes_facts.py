@@ -31,8 +31,6 @@ description:
     facts module will always collect a base set of facts from the device and can enable
     or disable collection of additional facts.
 version_added: 1.0.0
-extends_documentation_fragment:
-  - cisco.ios.ios
 notes:
   - Tested against Cisco IOSXE Version 17.3 on CML and IOS 15.6 for L2 specific resource.
   - Facts gathering for L3 devices are supposed to produce blank output for unsupported

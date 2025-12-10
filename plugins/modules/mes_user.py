@@ -215,8 +215,6 @@ options:
       - present
       - absent
     type: str
-extends_documentation_fragment:
-  - cisco.ios.ios
 """
 
 EXAMPLES = """
