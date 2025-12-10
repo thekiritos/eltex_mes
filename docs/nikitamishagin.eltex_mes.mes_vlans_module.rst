@@ -1,9 +1,9 @@
-.. _cisco.ios.ios_vlans_module:
+.. _nikitamishagin.eltex_mes.mes_vlans_module:
 
 
-*******************
-cisco.ios.ios_vlans
-*******************
+**********************************
+nikitamishagin.eltex_mes.mes_vlans
+**********************************
 
 **Resource module to configure VLANs.**
 
@@ -17,7 +17,7 @@ Version added: 1.0.0
 
 Synopsis
 --------
-- This module provides declarative management of VLANs on Cisco IOS network devices.
+- This module provides declarative management of VLANs on Eltex MES network devices.
 
 
 
