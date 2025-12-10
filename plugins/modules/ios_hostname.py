@@ -296,11 +296,10 @@ parsed:
 """
 
 from ansible.module_utils.basic import AnsibleModule
-
-from nikitamishagin.mes.plugins.module_utils.network.mes.argspec.hostname.hostname import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.mes.argspec.hostname.hostname import (
     HostnameArgs,
 )
-from nikitamishagin.mes.plugins.module_utils.network.mes.config.hostname.hostname import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.mes.config.hostname.hostname import (
     Hostname,
 )
 

@@ -10,8 +10,8 @@ __metaclass__ = type
 from textwrap import dedent
 from unittest.mock import patch
 
-from ansible_collections.cisco.ios.plugins.modules import ios_vlans
-from ansible_collections.cisco.ios.tests.unit.modules.utils import set_module_args
+from ansible_collections.nikitamishagin.eltex_mes.plugins.modules import ios_vlans
+from ansible_collections.nikitamishagin.eltex_mes.tests.unit.modules.utils import set_module_args
 
 from .ios_module import TestIosModule
 
@@ -29,17 +29,17 @@ class TestIosVlansModule(TestIosModule):
         self.get_resource_connection_facts = self.mock_get_resource_connection_facts.start()
 
         self.mock_execute_show_command = patch(
-            "ansible_collections.cisco.ios.plugins.module_utils.network.ios.facts.vlans.vlans."
+            "ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.facts.vlans.vlans."
             "VlansFacts.get_vlans_data",
         )
         self.execute_show_command = self.mock_execute_show_command.start()
         self.mock_execute_show_command_conf = patch(
-            "ansible_collections.cisco.ios.plugins.module_utils.network.ios.facts.vlans.vlans."
+            "ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.facts.vlans.vlans."
             "VlansFacts.get_vlan_conf_data",
         )
         self.execute_show_command_conf = self.mock_execute_show_command_conf.start()
         self.mock_l2_device_command = patch(
-            "ansible_collections.cisco.ios.plugins.modules.ios_vlans._is_l2_device",
+            "ansible_collections.nikitamishagin.eltex_mes.plugins.modules.ios_vlans._is_l2_device",
         )
         self._l2_device_command = self.mock_l2_device_command.start()
 

@@ -20,11 +20,10 @@ from collections import defaultdict
 from ansible_collections.ansible.netcommon.plugins.module_utils.network.common import (
     utils,
 )
-
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.argspec.hsrp_interfaces.hsrp_interfaces import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.argspec.hsrp_interfaces.hsrp_interfaces import (
     Hsrp_interfacesArgs,
 )
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.rm_templates.hsrp_interfaces import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.rm_templates.hsrp_interfaces import (
     Hsrp_interfacesTemplate,
 )
 

@@ -581,11 +581,10 @@ parsed:
 """
 
 from ansible.module_utils.basic import AnsibleModule
-
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.argspec.vrf_interfaces.vrf_interfaces import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.argspec.vrf_interfaces.vrf_interfaces import (
     Vrf_interfacesArgs,
 )
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.config.vrf_interfaces.vrf_interfaces import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.config.vrf_interfaces.vrf_interfaces import (
     Vrf_interfaces,
 )
 

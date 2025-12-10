@@ -1017,11 +1017,10 @@ commands:
 """
 
 from ansible.module_utils.basic import AnsibleModule
-
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.argspec.prefix_lists.prefix_lists import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.argspec.prefix_lists.prefix_lists import (
     Prefix_listsArgs,
 )
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.config.prefix_lists.prefix_lists import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.config.prefix_lists.prefix_lists import (
     Prefix_lists,
 )
 

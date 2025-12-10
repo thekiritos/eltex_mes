@@ -24,9 +24,10 @@ from ansible_collections.ansible.netcommon.plugins.module_utils.network.common.r
 from ansible_collections.ansible.netcommon.plugins.module_utils.network.common.utils import (
     dict_merge,
 )
-
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.facts.facts import Facts
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.rm_templates.evpn_evi import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.facts.facts import (
+    Facts,
+)
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.rm_templates.evpn_evi import (
     Evpn_eviTemplate,
 )
 

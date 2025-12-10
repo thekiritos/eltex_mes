@@ -1183,11 +1183,10 @@ parsed:
 """
 
 from ansible.module_utils.basic import AnsibleModule
-
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.argspec.vrf_address_family.vrf_address_family import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.argspec.vrf_address_family.vrf_address_family import (
     Vrf_address_familyArgs,
 )
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.config.vrf_address_family.vrf_address_family import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.config.vrf_address_family.vrf_address_family import (
     Vrf_address_family,
 )
 

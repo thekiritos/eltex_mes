@@ -874,11 +874,10 @@ parsed:
 
 
 from ansible.module_utils.basic import AnsibleModule
-
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.argspec.vrf_global.vrf_global import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.argspec.vrf_global.vrf_global import (
     Vrf_globalArgs,
 )
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.config.vrf_global.vrf_global import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.config.vrf_global.vrf_global import (
     Vrf_global,
 )
 

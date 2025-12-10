@@ -24,12 +24,13 @@ from ansible_collections.ansible.netcommon.plugins.module_utils.network.common.r
 from ansible_collections.ansible.netcommon.plugins.module_utils.network.common.utils import (
     dict_merge,
 )
-
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.facts.facts import Facts
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.rm_templates.static_routes import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.facts.facts import (
+    Facts,
+)
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.rm_templates.static_routes import (
     Static_routesTemplate,
 )
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.utils.utils import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.utils.utils import (
     validate_n_expand_ipv4,
 )
 

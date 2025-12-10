@@ -2604,11 +2604,10 @@ parsed:
 """
 
 from ansible.module_utils.basic import AnsibleModule
-
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.argspec.snmp_server.snmp_server import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.argspec.snmp_server.snmp_server import (
     Snmp_serverArgs,
 )
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.config.snmp_server.snmp_server import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.config.snmp_server.snmp_server import (
     Snmp_server,
 )
 

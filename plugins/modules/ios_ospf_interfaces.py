@@ -1286,11 +1286,10 @@ parsed:
 """
 
 from ansible.module_utils.basic import AnsibleModule
-
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.argspec.ospf_interfaces.ospf_interfaces import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.argspec.ospf_interfaces.ospf_interfaces import (
     Ospf_interfacesArgs,
 )
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.config.ospf_interfaces.ospf_interfaces import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.config.ospf_interfaces.ospf_interfaces import (
     Ospf_interfaces,
 )
 

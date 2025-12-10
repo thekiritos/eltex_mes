@@ -1051,11 +1051,10 @@ commands:
 """
 
 from ansible.module_utils.basic import AnsibleModule
-
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.argspec.logging_global.logging_global import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.argspec.logging_global.logging_global import (
     Logging_globalArgs,
 )
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.config.logging_global.logging_global import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.config.logging_global.logging_global import (
     Logging_global,
 )
 

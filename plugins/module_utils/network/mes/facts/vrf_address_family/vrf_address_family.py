@@ -17,14 +17,13 @@ based on the configuration.
 
 
 from ansible_collections.ansible.netcommon.plugins.module_utils.network.common import utils
-
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.argspec.vrf_address_family.vrf_address_family import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.argspec.vrf_address_family.vrf_address_family import (
     Vrf_address_familyArgs,
 )
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.rm_templates.vrf_address_family import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.rm_templates.vrf_address_family import (
     Vrf_address_familyTemplate,
 )
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.utils.utils import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.utils.utils import (
     flatten_config,
 )
 

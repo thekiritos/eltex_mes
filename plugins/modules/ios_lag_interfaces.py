@@ -611,11 +611,10 @@ parsed:
 """
 
 from ansible.module_utils.basic import AnsibleModule
-
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.argspec.lag_interfaces.lag_interfaces import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.argspec.lag_interfaces.lag_interfaces import (
     Lag_InterfacesArgs,
 )
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.config.lag_interfaces.lag_interfaces import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.config.lag_interfaces.lag_interfaces import (
     Lag_interfaces,
 )
 

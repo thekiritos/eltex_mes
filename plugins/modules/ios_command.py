@@ -367,8 +367,9 @@ from ansible_collections.ansible.netcommon.plugins.module_utils.network.common.u
     to_lines,
     transform_commands,
 )
-
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.ios import run_commands
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.ios import (
+    run_commands,
+)
 
 
 def parse_commands(module, warnings):
