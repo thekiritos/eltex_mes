@@ -23,8 +23,8 @@ __metaclass__ = type
 from textwrap import dedent
 from unittest.mock import patch
 
-from ansible_collections.cisco.ios.plugins.modules import ios_vrf_interfaces
-from ansible_collections.cisco.ios.tests.unit.modules.utils import set_module_args
+from ansible_collections.nikitamishagin.eltex_mes.plugins.modules import ios_vrf_interfaces
+from ansible_collections.nikitamishagin.eltex_mes.tests.unit.modules.utils import set_module_args
 
 from .ios_module import TestIosModule
 
@@ -42,7 +42,7 @@ class TestIosVrfInterfacesModule(TestIosModule):
         self.get_resource_connection = self.mock_get_resource_connection.start()
 
         self.mock_get_config = patch(
-            "ansible_collections.cisco.ios.plugins.module_utils.network.ios.facts.vrf_interfaces.vrf_interfaces."
+            "ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.facts.vrf_interfaces.vrf_interfaces."
             "Vrf_interfacesFacts.get_vrf_interfaces_data",
         )
         self.get_config = self.mock_get_config.start()

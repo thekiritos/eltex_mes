@@ -34,8 +34,7 @@ except ImportError:
 from unittest import TestCase
 
 from ansible.module_utils._text import to_bytes
-
-from ansible_collections.cisco.ios.plugins.cliconf import ios
+from ansible_collections.nikitamishagin.eltex_mes.plugins.cliconf import ios
 
 
 b_FIXTURE_DIR = b"%s/fixtures/ios" % (

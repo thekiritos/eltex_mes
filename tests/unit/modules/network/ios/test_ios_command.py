@@ -24,8 +24,8 @@ import json
 
 from unittest.mock import patch
 
-from ansible_collections.cisco.ios.plugins.modules import ios_command
-from ansible_collections.cisco.ios.tests.unit.modules.utils import set_module_args
+from ansible_collections.nikitamishagin.eltex_mes.plugins.modules import ios_command
+from ansible_collections.nikitamishagin.eltex_mes.tests.unit.modules.utils import set_module_args
 
 from .ios_module import TestIosModule, load_fixture
 
@@ -37,7 +37,7 @@ class TestIosCommandModule(TestIosModule):
         super(TestIosCommandModule, self).setUp()
 
         self.mock_run_commands = patch(
-            "ansible_collections.cisco.ios.plugins.modules.ios_command.run_commands",
+            "ansible_collections.nikitamishagin.eltex_mes.plugins.modules.ios_command.run_commands",
         )
         self.run_commands = self.mock_run_commands.start()
 

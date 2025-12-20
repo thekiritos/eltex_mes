@@ -16,11 +16,10 @@ based on the configuration.
 """
 
 from ansible_collections.ansible.netcommon.plugins.module_utils.network.common import utils
-
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.argspec.ntp_global.ntp_global import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.argspec.ntp_global.ntp_global import (
     Ntp_globalArgs,
 )
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.rm_templates.ntp_global import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.rm_templates.ntp_global import (
     Ntp_globalTemplate,
 )
 

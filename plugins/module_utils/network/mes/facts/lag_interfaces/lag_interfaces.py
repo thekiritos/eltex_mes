@@ -18,11 +18,10 @@ based on the configuration.
 from itertools import groupby
 
 from ansible_collections.ansible.netcommon.plugins.module_utils.network.common import utils
-
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.argspec.lag_interfaces.lag_interfaces import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.argspec.lag_interfaces.lag_interfaces import (
     Lag_InterfacesArgs,
 )
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.rm_templates.lag_interfaces import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.rm_templates.lag_interfaces import (
     Lag_interfacesTemplate,
 )
 
