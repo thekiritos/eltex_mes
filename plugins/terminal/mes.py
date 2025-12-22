@@ -16,6 +16,9 @@
 # You should have received a copy of the GNU General Public License
 # along with Ansible.  If not, see <http://www.gnu.org/licenses/>.
 #
+# Copyright 2025 Nikita Mishagin
+# Modified from cisco.ios to Eltex MES
+#
 from __future__ import absolute_import, division, print_function
 
 
@@ -94,25 +97,11 @@ class TerminalModule(TerminalBase):
     def on_open_shell(self):
         _is_sdWan = False  # initialize to false for default IOS execution
         try:
-            self._exec_cli_command(b"terminal length 0")
-        except AnsibleConnectionFailure:
-            try:
-                self._exec_cli_command(b"screen-length 0")  # support to SD-WAN mode
-                _is_sdWan = True
-            except AnsibleConnectionFailure:  # fails as length required for handling prompt
-                raise AnsibleConnectionFailure("unable to set terminal parameters")
-        try:
-            if _is_sdWan:
-                self._exec_cli_command(b"screen-width 512")  # support to SD-WAN mode
-            else:
-                self._exec_cli_command(b"terminal width 512")
-                try:
-                    self._exec_cli_command(b"terminal width 0")
-                except AnsibleConnectionFailure:
-                    pass
+            self._exec_cli_command(b"terminal datadump")
+        # Other deleted because eltex doesnt support it.
         except AnsibleConnectionFailure:
             display.display(
-                "WARNING: Unable to set terminal/screen width, command responses may be truncated",
+                "WARNING: Unable to set terminal datadump, command responses may be truncated",
             )
 
     def on_become(self, passwd=None):
