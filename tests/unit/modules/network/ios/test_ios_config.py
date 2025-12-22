@@ -23,9 +23,9 @@ from __future__ import absolute_import, division, print_function
 __metaclass__ = type
 from unittest.mock import MagicMock, patch
 
-from ansible_collections.cisco.ios.plugins.cliconf.ios import Cliconf
-from ansible_collections.cisco.ios.plugins.modules import ios_config
-from ansible_collections.cisco.ios.tests.unit.modules.utils import set_module_args
+from ansible_collections.nikitamishagin.eltex_mes.plugins.cliconf.ios import Cliconf
+from ansible_collections.nikitamishagin.eltex_mes.plugins.modules import ios_config
+from ansible_collections.nikitamishagin.eltex_mes.tests.unit.modules.utils import set_module_args
 
 from .ios_module import TestIosModule, load_fixture
 
@@ -37,12 +37,12 @@ class TestIosConfigModule(TestIosModule):
         super(TestIosConfigModule, self).setUp()
 
         self.mock_get_config = patch(
-            "ansible_collections.cisco.ios.plugins.modules.ios_config.get_config",
+            "ansible_collections.nikitamishagin.eltex_mes.plugins.modules.ios_config.get_config",
         )
         self.get_config = self.mock_get_config.start()
 
         self.mock_get_connection = patch(
-            "ansible_collections.cisco.ios.plugins.modules.ios_config.get_connection",
+            "ansible_collections.nikitamishagin.eltex_mes.plugins.modules.ios_config.get_connection",
         )
         self.get_connection = self.mock_get_connection.start()
 
@@ -50,7 +50,7 @@ class TestIosConfigModule(TestIosModule):
         self.conn.edit_config = MagicMock()
 
         self.mock_run_commands = patch(
-            "ansible_collections.cisco.ios.plugins.modules.ios_config.run_commands",
+            "ansible_collections.nikitamishagin.eltex_mes.plugins.modules.ios_config.run_commands",
         )
         self.run_commands = self.mock_run_commands.start()
 

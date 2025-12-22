@@ -21,8 +21,8 @@ from __future__ import absolute_import, division, print_function
 __metaclass__ = type
 from unittest.mock import patch
 
-from ansible_collections.cisco.ios.plugins.modules import ios_facts
-from ansible_collections.cisco.ios.tests.unit.modules.utils import set_module_args
+from ansible_collections.nikitamishagin.eltex_mes.plugins.modules import ios_facts
+from ansible_collections.nikitamishagin.eltex_mes.tests.unit.modules.utils import set_module_args
 
 from .ios_module import TestIosModule, load_fixture
 
@@ -33,7 +33,7 @@ class TestIosFactsModule(TestIosModule):
     def setUp(self):
         super(TestIosFactsModule, self).setUp()
         self.mock_run_commands = patch(
-            "ansible_collections.cisco.ios.plugins.module_utils.network.ios.facts.legacy.base.run_commands",
+            "ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.facts.legacy.base.run_commands",
         )
         self.run_commands = self.mock_run_commands.start()
 
@@ -43,7 +43,7 @@ class TestIosFactsModule(TestIosModule):
         self.get_resource_connection = self.mock_get_resource_connection.start()
 
         self.mock_get_capabilities = patch(
-            "ansible_collections.cisco.ios.plugins.module_utils.network.ios.facts.legacy.base.get_capabilities",
+            "ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.facts.legacy.base.get_capabilities",
         )
         self.get_capabilities = self.mock_get_capabilities.start()
         self.get_capabilities.return_value = {

@@ -10,8 +10,8 @@ __metaclass__ = type
 from textwrap import dedent
 from unittest.mock import patch
 
-from ansible_collections.cisco.ios.plugins.modules import ios_ospf_interfaces
-from ansible_collections.cisco.ios.tests.unit.modules.utils import set_module_args
+from ansible_collections.nikitamishagin.eltex_mes.plugins.modules import ios_ospf_interfaces
+from ansible_collections.nikitamishagin.eltex_mes.tests.unit.modules.utils import set_module_args
 
 from .ios_module import TestIosModule
 
@@ -29,7 +29,7 @@ class TestIosOspfInterfacesModule(TestIosModule):
         self.get_resource_connection_facts = self.mock_get_resource_connection_facts.start()
 
         self.mock_execute_show_command = patch(
-            "ansible_collections.cisco.ios.plugins.module_utils.network.ios.facts.ospf_interfaces.ospf_interfaces."
+            "ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.facts.ospf_interfaces.ospf_interfaces."
             "Ospf_interfacesFacts.get_ospf_interfaces_data",
         )
         self.execute_show_command = self.mock_execute_show_command.start()

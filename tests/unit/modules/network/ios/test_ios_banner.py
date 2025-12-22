@@ -20,8 +20,8 @@ from __future__ import absolute_import, division, print_function
 __metaclass__ = type
 from unittest.mock import patch
 
-from ansible_collections.cisco.ios.plugins.modules import ios_banner
-from ansible_collections.cisco.ios.tests.unit.modules.utils import set_module_args
+from ansible_collections.nikitamishagin.eltex_mes.plugins.modules import ios_banner
+from ansible_collections.nikitamishagin.eltex_mes.tests.unit.modules.utils import set_module_args
 
 from .ios_module import TestIosModule, load_fixture
 
@@ -33,12 +33,12 @@ class TestIosBannerModule(TestIosModule):
         super(TestIosBannerModule, self).setUp()
 
         self.mock_get_config = patch(
-            "ansible_collections.cisco.ios.plugins.modules.ios_banner.get_config",
+            "ansible_collections.nikitamishagin.eltex_mes.plugins.modules.ios_banner.get_config",
         )
         self.get_config = self.mock_get_config.start()
 
         self.mock_load_config = patch(
-            "ansible_collections.cisco.ios.plugins.modules.ios_banner.load_config",
+            "ansible_collections.nikitamishagin.eltex_mes.plugins.modules.ios_banner.load_config",
         )
         self.load_config = self.mock_load_config.start()
 

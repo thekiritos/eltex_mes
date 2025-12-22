@@ -18,11 +18,10 @@ based on the configuration.
 import re
 
 from ansible_collections.ansible.netcommon.plugins.module_utils.network.common import utils
-
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.argspec.snmp_server.snmp_server import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.argspec.snmp_server.snmp_server import (
     Snmp_serverArgs,
 )
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.rm_templates.snmp_server import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.rm_templates.snmp_server import (
     Snmp_serverTemplate,
 )
 

@@ -18,11 +18,10 @@ based on the configuration.
 from copy import deepcopy
 
 from ansible_collections.ansible.netcommon.plugins.module_utils.network.common import utils
-
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.argspec.route_maps.route_maps import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.argspec.route_maps.route_maps import (
     Route_mapsArgs,
 )
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.rm_templates.route_maps import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.rm_templates.route_maps import (
     Route_mapsTemplate,
 )
 

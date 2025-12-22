@@ -25,9 +25,10 @@ from ansible_collections.ansible.netcommon.plugins.module_utils.network.common.u
     dict_merge,
     param_list_to_dict,
 )
-
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.facts.facts import Facts
-from ansible_collections.cisco.ios.plugins.module_utils.network.ios.rm_templates.vxlan_vtep import (
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.facts.facts import (
+    Facts,
+)
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.ios.rm_templates.vxlan_vtep import (
     Vxlan_vtepTemplate,
 )
 
