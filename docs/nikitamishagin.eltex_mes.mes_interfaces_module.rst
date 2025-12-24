@@ -1,8 +1,8 @@
-.. _nikitamishagin.eltex_mes.ios_interfaces_module:
+.. _nikitamishagin.eltex_mes.mes_interfaces_module:
 
 
 ***************************************
-nikitamishagin.eltex_mes.ios_interfaces
+nikitamishagin.eltex_mes.mes_interfaces
 ***************************************
 
 **Resource module to configure interfaces.**
@@ -1010,7 +1010,7 @@ Examples
     #  negotiation auto
 
     - name: Merge provided configuration with device configuration
-      cisco.ios.ios_interfaces:
+      nikitamishagin.eltex_mes.mes_interfaces:
         config:
           - name: GigabitEthernet2
             description: Configured and Merged by Ansible Network
@@ -1113,7 +1113,7 @@ Examples
     #  no switchport
 
     - name: Merge provided configuration with device configuration
-      cisco.ios.ios_interfaces:
+      nikitamishagin.eltex_mes.mes_interfaces:
         config:
           - name: GigabitEthernet2
             description: Configured and Merged by Ansible Network
@@ -1192,7 +1192,7 @@ Examples
     #  ip address dhcp hostname testHostname
 
     - name: Replaces device configuration of listed interfaces with provided configuration
-      cisco.ios.ios_interfaces:
+      nikitamishagin.eltex_mes.mes_interfaces:
         config:
           - name: GigabitEthernet3
             description: Configured and Replaced by Ansible Network
@@ -1306,7 +1306,7 @@ Examples
     #  ip address dhcp hostname testHostname
 
     - name: Override device configuration of all interfaces with provided configuration
-      cisco.ios.ios_interfaces:
+      nikitamishagin.eltex_mes.mes_interfaces:
         config:
           - description: Management interface do not change
             enabled: true
@@ -1444,7 +1444,7 @@ Examples
     #  shutdown
 
     - name: "Delete interface attributes (Note: This won't delete the interface itself)"
-      cisco.ios.ios_interfaces:
+      nikitamishagin.eltex_mes.mes_interfaces:
         config:
           - name: GigabitEthernet2
         state: deleted
@@ -1566,7 +1566,7 @@ Examples
     #  shutdown
 
     - name: "Purge given interfaces (Note: This will delete the interface itself)"
-      cisco.ios.ios_interfaces:
+      nikitamishagin.eltex_mes.mes_interfaces:
         config:
           - name: Loopback888
           - name: Vlan50
@@ -1670,7 +1670,7 @@ Examples
     #  negotiation auto
 
     - name: Gather facts of interfaces
-      cisco.ios.ios_interfaces:
+      nikitamishagin.eltex_mes.mes_interfaces:
         config:
         state: gathered
 
@@ -1696,7 +1696,7 @@ Examples
     # Using rendered
 
     - name: Render the commands for provided configuration
-      cisco.ios.ios_interfaces:
+      nikitamishagin.eltex_mes.mes_interfaces:
         config:
           - name: GigabitEthernet1
             description: Configured by Ansible-Network
@@ -1756,7 +1756,7 @@ Examples
     #  negotiation auto
 
     - name: Parse the provided configuration
-      cisco.ios.ios_interfaces:
+      nikitamishagin.eltex_mes.mes_interfaces:
         running_config: "{{ lookup('file', 'parsed.cfg') }}"
         state: parsed
 

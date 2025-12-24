@@ -1,8 +1,8 @@
-.. _nikitamishagin.eltex_mes.ios_lldp_global_module:
+.. _nikitamishagin.eltex_mes.mes_lldp_global_module:
 
 
 ****************************************
-nikitamishagin.eltex_mes.ios_lldp_global
+nikitamishagin.eltex_mes.mes_lldp_global
 ****************************************
 
 **Resource module to configure LLDP.**
@@ -400,7 +400,7 @@ Examples
     # vios1#
 
     - name: Merge provided configuration with device configuration
-      cisco.ios.ios_lldp_global:
+      nikitamishagin.eltex_mes.mes_lldp_global:
         config:
           holdtime: 10
           enabled: true
@@ -427,7 +427,7 @@ Examples
     #  lldp run
 
     - name: Replaces LLDP device configuration with provided configuration
-      cisco.ios.ios_lldp_global:
+      nikitamishagin.eltex_mes.mes_lldp_global:
         config:
           holdtime: 20
           reinit: 5
@@ -451,7 +451,7 @@ Examples
     #  lldp run
 
     - name: Delete LLDP attributes
-      cisco.ios.ios_lldp_global:
+      nikitamishagin.eltex_mes.mes_lldp_global:
         state: deleted
 
     # After state:
@@ -471,7 +471,7 @@ Examples
     #  lldp run
 
     - name: Gather listed interfaces with provided configurations
-      cisco.ios.ios_lldp_global:
+      nikitamishagin.eltex_mes.mes_lldp_global:
         config:
         state: gathered
 
@@ -496,7 +496,7 @@ Examples
 
     # Using Rendered
     - name: Render the commands for provided  configuration
-      cisco.ios.ios_lldp_global:
+      nikitamishagin.eltex_mes.mes_lldp_global:
         config:
           holdtime: 10
           enabled: true
@@ -525,7 +525,7 @@ Examples
     # lldp run
 
     - name: Parse the commands for provided configuration
-      cisco.ios.ios_lldp_global:
+      nikitamishagin.eltex_mes.mes_lldp_global:
         running_config: "{{ lookup('file', 'parsed.cfg') }}"
         state: parsed
 

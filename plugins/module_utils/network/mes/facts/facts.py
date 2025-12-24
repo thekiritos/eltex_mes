@@ -107,6 +107,9 @@ from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.m
 from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.mes.facts.static_routes.static_routes import (
     Static_routesFacts,
 )
+from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.mes.facts.vlans.vlans import (
+    VlansFacts,
+)
 from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.mes.facts.vrf_address_family.vrf_address_family import (
     Vrf_address_familyFacts,
 )
@@ -118,9 +121,6 @@ from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.m
 )
 from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.mes.facts.vxlan_vtep.vxlan_vtep import (
     Vxlan_vtepFacts,
-)
-from ansible_collections.nikitamishagin.eltex_mes.plugins.module_utils.network.mes.facts.vlans.vlans import (
-    VlansFacts,
 )
 
 

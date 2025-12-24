@@ -1,8 +1,8 @@
-.. _nikitamishagin.eltex_mes.ios_prefix_lists_module:
+.. _nikitamishagin.eltex_mes.mes_prefix_lists_module:
 
 
 *****************************************
-nikitamishagin.eltex_mes.ios_prefix_lists
+nikitamishagin.eltex_mes.mes_prefix_lists
 *****************************************
 
 **Resource module to configure prefix lists.**
@@ -325,7 +325,7 @@ Examples
     # Before state:
     # -------------
     #
-    # router-ios#sh running-config | section ^ip prefix-list|^ipv6 prefix-list
+    # router-mes#sh running-config | section ^ip prefix-list|^ipv6 prefix-list
     # ip prefix-list 10 description this is test description
     # ip prefix-list 10 seq 5 deny 1.0.0.0/8 le 15
     # ip prefix-list 10 seq 10 deny 35.0.0.0/8 ge 10
@@ -340,7 +340,7 @@ Examples
     # ipv6 prefix-list test_ipv6 seq 10 deny 2001:DB8:0:4::/64 ge 80
 
     - name: Delete provided Prefix lists config by Prefix name
-      cisco.ios.ios_prefix_lists:
+      nikitamishagin.eltex_mes.mes_prefix_lists:
         config:
           - afi: ipv4
             prefix_lists:
@@ -427,7 +427,7 @@ Examples
 
     # After state:
     # ------------
-    # router-ios#sh running-config | section ^ip prefix-list|^ipv6 prefix-list
+    # router-mes#sh running-config | section ^ip prefix-list|^ipv6 prefix-list
     # ip prefix-list test description this is test
     # ip prefix-list test seq 50 deny 12.0.0.0/8 ge 15
     # ipv6 prefix-list test_ipv6 description this is ipv6 prefix-list
@@ -438,7 +438,7 @@ Examples
     # Before state:
     # -------------
     #
-    # router-ios#sh running-config | section ^ip prefix-list|^ipv6 prefix-list
+    # router-mes#sh running-config | section ^ip prefix-list|^ipv6 prefix-list
     # ip prefix-list 10 description this is test description
     # ip prefix-list 10 seq 5 deny 1.0.0.0/8 le 15
     # ip prefix-list 10 seq 10 deny 35.0.0.0/8 ge 10
@@ -453,7 +453,7 @@ Examples
     # ipv6 prefix-list test_ipv6 seq 10 deny 2001:DB8:0:4::/64 ge 80
 
     - name: Delete provided Prefix lists config by AFI
-      cisco.ios.ios_prefix_lists:
+      nikitamishagin.eltex_mes.mes_prefix_lists:
         config:
           - afi: ipv4
         state: deleted
@@ -529,7 +529,7 @@ Examples
 
     # After state:
     # -------------
-    # router-ios#sh running-config | section ^ip prefix-list|^ipv6 prefix-list
+    # router-mes#sh running-config | section ^ip prefix-list|^ipv6 prefix-list
     # ipv6 prefix-list test_ipv6 description this is ipv6 prefix-list
     # ipv6 prefix-list test_ipv6 seq 10 deny 2001:DB8:0:4::/64 ge 80
 
@@ -538,7 +538,7 @@ Examples
     # Before state:
     # -------------
     #
-    # router-ios#sh running-config | section ^ip prefix-list|^ipv6 prefix-list
+    # router-mes#sh running-config | section ^ip prefix-list|^ipv6 prefix-list
     # ip prefix-list 10 description this is test description
     # ip prefix-list 10 seq 5 deny 1.0.0.0/8 le 15
     # ip prefix-list 10 seq 10 deny 35.0.0.0/8 ge 10
@@ -553,7 +553,7 @@ Examples
     # ipv6 prefix-list test_ipv6 seq 10 deny 2001:DB8:0:4::/64 ge 80
 
     - name: Delete all Prefix lists config
-      cisco.ios.ios_prefix_lists:
+      nikitamishagin.eltex_mes.mes_prefix_lists:
         state: deleted
 
     # Commands Fired:
@@ -568,20 +568,20 @@ Examples
 
     # After state:
     # -------------
-    # router-ios#sh running-config | section ^ip prefix-list|^ipv6 prefix-list
-    # router-ios#
+    # router-mes#sh running-config | section ^ip prefix-list|^ipv6 prefix-list
+    # router-mes#
 
     # Using merged
 
     # Before state:
     # -------------
     #
-    # router-ios#sh running-config | section ^ip prefix-list|^ipv6 prefix-list
+    # router-mes#sh running-config | section ^ip prefix-list|^ipv6 prefix-list
     # ipv6 prefix-list test_ipv6 description this is ipv6
     # ipv6 prefix-list test_ipv6 seq 10 deny 2001:DB8:0:4::/64 ge 80
 
     - name: Merge provided Prefix lists configuration
-      cisco.ios.ios_prefix_lists:
+      nikitamishagin.eltex_mes.mes_prefix_lists:
         config:
           - afi: ipv6
             prefix_lists:
@@ -605,12 +605,12 @@ Examples
     # Before state:
     # -------------
     #
-    # router-ios#sh running-config | section ^ip prefix-list|^ipv6 prefix-list
+    # router-mes#sh running-config | section ^ip prefix-list|^ipv6 prefix-list
     # ipv6 prefix-list test_ipv6 description this is ipv6
     # ipv6 prefix-list test_ipv6 seq 10 deny 2001:DB8:0:4::/64 ge 80
 
     - name: Merge provided Prefix lists configuration
-      cisco.ios.ios_prefix_lists:
+      nikitamishagin.eltex_mes.mes_prefix_lists:
         config:
           - afi: ipv4
             prefix_lists:
@@ -686,7 +686,7 @@ Examples
     # After state:
     # -------------
     #
-    # router-ios#sh running-config | section ^ip prefix-list|^ipv6 prefix-list
+    # router-mes#sh running-config | section ^ip prefix-list|^ipv6 prefix-list
     # ip prefix-list 10 description this is new merge test
     # ip prefix-list 10 seq 5 deny 1.0.0.0/8 le 15
     # ip prefix-list 10 seq 10 deny 35.0.0.0/8 ge 10
@@ -705,7 +705,7 @@ Examples
     # Before state:
     # -------------
     #
-    # router-ios#sh running-config | section ^ip prefix-list|^ipv6 prefix-list
+    # router-mes#sh running-config | section ^ip prefix-list|^ipv6 prefix-list
     # ip prefix-list 10 description this is test description
     # ip prefix-list 10 seq 5 deny 1.0.0.0/8 le 15
     # ip prefix-list 10 seq 10 deny 35.0.0.0/8 ge 10
@@ -720,7 +720,7 @@ Examples
     # ipv6 prefix-list test_ipv6 seq 10 deny 2001:DB8:0:4::/64 ge 80
 
     - name: Override provided Prefix lists configuration
-      cisco.ios.ios_prefix_lists:
+      nikitamishagin.eltex_mes.mes_prefix_lists:
         config:
           - afi: ipv4
             prefix_lists:
@@ -774,7 +774,7 @@ Examples
     # After state:
     # -------------
     #
-    # router-ios#sh running-config | section ^ip prefix-list|^ipv6 prefix-list
+    # router-mes#sh running-config | section ^ip prefix-list|^ipv6 prefix-list
     # ip prefix-list 10 description this is override test
     # ip prefix-list 10 seq 15 deny 12.0.0.0/8 ge 15
     # ip prefix-list 10 seq 20 deny 14.0.0.0/8 ge 20 le 21
@@ -788,7 +788,7 @@ Examples
     # Before state:
     # -------------
     #
-    # router-ios#sh running-config | section ^ip prefix-list|^ipv6 prefix-list
+    # router-mes#sh running-config | section ^ip prefix-list|^ipv6 prefix-list
     # ip prefix-list 10 description this is test description
     # ip prefix-list 10 seq 5 deny 1.0.0.0/8 le 15
     # ip prefix-list 10 seq 10 deny 35.0.0.0/8 ge 10
@@ -803,7 +803,7 @@ Examples
     # ipv6 prefix-list test_ipv6 seq 10 deny 2001:DB8:0:4::/64 ge 80
 
     - name: Replaced provided Prefix lists configuration
-      cisco.ios.ios_prefix_lists:
+      nikitamishagin.eltex_mes.mes_prefix_lists:
         config:
           - afi: ipv4
             prefix_lists:
@@ -854,7 +854,7 @@ Examples
     # After state:
     # -------------
     #
-    # router-ios#sh running-config | section ^ip prefix-list|^ipv6 prefix-list
+    # router-mes#sh running-config | section ^ip prefix-list|^ipv6 prefix-list
     # ip prefix-list 10 description this is replace test
     # ip prefix-list 10 seq 15 deny 12.0.0.0/8 ge 15
     # ip prefix-list 10 seq 20 deny 14.0.0.0/8 ge 20 le 21
@@ -873,7 +873,7 @@ Examples
     # Before state:
     # -------------
     #
-    # router-ios#sh running-config | section ^ip prefix-list|^ipv6 prefix-list
+    # router-mes#sh running-config | section ^ip prefix-list|^ipv6 prefix-list
     # ip prefix-list 10 description this is test description
     # ip prefix-list 10 seq 5 deny 1.0.0.0/8 le 15
     # ip prefix-list 10 seq 10 deny 35.0.0.0/8 ge 10
@@ -888,7 +888,7 @@ Examples
     # ipv6 prefix-list test_ipv6 seq 10 deny 2001:DB8:0:4::/64 ge 80
 
     - name: Gather Prefix lists provided configurations
-      cisco.ios.ios_prefix_lists:
+      nikitamishagin.eltex_mes.mes_prefix_lists:
         config:
         state: gathered
 
@@ -985,7 +985,7 @@ Examples
     # After state:
     # ------------
     #
-    # router-ios#sh running-config | section ^ip prefix-list|^ipv6 prefix-list
+    # router-mes#sh running-config | section ^ip prefix-list|^ipv6 prefix-list
     # ip prefix-list 10 description this is test description
     # ip prefix-list 10 seq 5 deny 1.0.0.0/8 le 15
     # ip prefix-list 10 seq 10 deny 35.0.0.0/8 ge 10
@@ -1002,7 +1002,7 @@ Examples
     # Using Rendered
 
     - name: Render the commands for provided  configuration
-      cisco.ios.ios_prefix_lists:
+      nikitamishagin.eltex_mes.mes_prefix_lists:
         config:
           - afi: ipv4
             prefix_lists:
@@ -1094,7 +1094,7 @@ Examples
     # ipv6 prefix-list test_ipv6 seq 10 deny 2001:DB8:0:4::/64 ge 80
 
     - name: Parse the provided configuration with the existing running configuration
-      cisco.ios.ios_prefix_lists:
+      nikitamishagin.eltex_mes.mes_prefix_lists:
         running_config: "{{ lookup('file', 'parsed.cfg') }}"
         state: parsed
 

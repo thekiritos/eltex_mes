@@ -1,8 +1,8 @@
-.. _nikitamishagin.eltex_mes.ios_acl_interfaces_module:
+.. _nikitamishagin.eltex_mes.mes_acl_interfaces_module:
 
 
 *******************************************
-nikitamishagin.eltex_mes.ios_acl_interfaces
+nikitamishagin.eltex_mes.mes_acl_interfaces
 *******************************************
 
 **Resource module to configure ACL interfaces.**
@@ -243,7 +243,7 @@ Examples
     #  ip access-group 123 out
 
     - name: Merge module attributes of given access-groups
-      cisco.ios.ios_acl_interfaces:
+      nikitamishagin.eltex_mes.mes_acl_interfaces:
         config:
           - name: GigabitEthernet0/1
             access_groups:
@@ -311,7 +311,7 @@ Examples
     #  ip access-group 123 out
 
     - name: Replace module attributes of given access-groups
-      cisco.ios.ios_acl_interfaces:
+      nikitamishagin.eltex_mes.mes_acl_interfaces:
         config:
           - name: GigabitEthernet0/1
             access_groups:
@@ -363,7 +363,7 @@ Examples
     #  ip access-group 123 out
 
     - name: Overridden module attributes of given access-groups
-      cisco.ios.ios_acl_interfaces:
+      nikitamishagin.eltex_mes.mes_acl_interfaces:
         config:
           - name: GigabitEthernet0/1
             access_groups:
@@ -416,7 +416,7 @@ Examples
     #  ip access-group 123 out
 
     - name: Delete module attributes of given Interface
-      cisco.ios.ios_acl_interfaces:
+      nikitamishagin.eltex_mes.mes_acl_interfaces:
         config:
           - name: GigabitEthernet0/1
         state: deleted
@@ -460,7 +460,7 @@ Examples
     #  ip access-group 123 out
 
     - name: Delete module attributes of given access-groups from ALL Interfaces
-      cisco.ios.ios_acl_interfaces:
+      nikitamishagin.eltex_mes.mes_acl_interfaces:
         config:
         state: deleted
 
@@ -503,7 +503,7 @@ Examples
     #  ip access-group 123 out
 
     - name: Gather listed acl interfaces with provided configurations
-      cisco.ios.ios_acl_interfaces:
+      nikitamishagin.eltex_mes.mes_acl_interfaces:
         config:
         state: gathered
 
@@ -586,7 +586,7 @@ Examples
     # Using Rendered
 
     - name: Render the commands for provided  configuration
-      cisco.ios.ios_acl_interfaces:
+      nikitamishagin.eltex_mes.mes_acl_interfaces:
         config:
           - name: GigabitEthernet0/1
             access_groups:
@@ -627,7 +627,7 @@ Examples
     # ipv6 traffic-filter test_v6 out
 
     - name: Parse the commands for provided configuration
-      cisco.ios.ios_acl_interfaces:
+      nikitamishagin.eltex_mes.mes_acl_interfaces:
         running_config: "{{ lookup('file', 'parsed.cfg') }}"
         state: parsed
 

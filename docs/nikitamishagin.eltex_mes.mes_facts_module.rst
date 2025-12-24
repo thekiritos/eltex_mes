@@ -1,8 +1,8 @@
-.. _nikitamishagin.eltex_mes.ios_facts_module:
+.. _nikitamishagin.eltex_mes.mes_facts_module:
 
 
 **********************************
-nikitamishagin.eltex_mes.ios_facts
+nikitamishagin.eltex_mes.mes_facts
 **********************************
 
 **Module to collect facts from remote devices.**
@@ -108,26 +108,26 @@ Examples
 .. code-block:: yaml
 
     - name: Gather all legacy facts
-      cisco.ios.ios_facts:
+      nikitamishagin.eltex_mes.mes_facts:
         gather_subset: all
 
     - name: Gather only the config and default facts
-      cisco.ios.ios_facts:
+      nikitamishagin.eltex_mes.mes_facts:
         gather_subset:
           - config
 
     - name: Do not gather hardware facts
-      cisco.ios.ios_facts:
+      nikitamishagin.eltex_mes.mes_facts:
         gather_subset:
           - "!hardware"
 
     - name: Gather legacy and resource facts
-      cisco.ios.ios_facts:
+      nikitamishagin.eltex_mes.mes_facts:
         gather_subset: all
         gather_network_resources: all
 
     - name: Gather only the interfaces resource facts and no legacy facts
-      cisco.ios.ios_facts:
+      nikitamishagin.eltex_mes.mes_facts:
         gather_subset:
           - "!all"
           - "!min"
@@ -135,17 +135,17 @@ Examples
           - interfaces
 
     - name: Gather interfaces resource and minimal legacy facts
-      cisco.ios.ios_facts:
+      nikitamishagin.eltex_mes.mes_facts:
         gather_subset: min
         gather_network_resources: interfaces
 
     - name: Gather L2 interfaces resource and minimal legacy facts
-      cisco.ios.ios_facts:
+      nikitamishagin.eltex_mes.mes_facts:
         gather_subset: min
         gather_network_resources: l2_interfaces
 
     - name: Gather L3 interfaces resource and minimal legacy facts
-      cisco.ios.ios_facts:
+      nikitamishagin.eltex_mes.mes_facts:
         gather_subset: min
         gather_network_resources: l3_interfaces
 
@@ -346,21 +346,6 @@ Common return values are documented `here <https://docs.ansible.com/ansible/late
             <tr>
                 <td colspan="1">
                     <div class="ansibleOptionAnchor" id="return-"></div>
-                    <b>ansible_net_iostype</b>
-                    <a class="ansibleOptionLink" href="#return-" title="Permalink to this return value"></a>
-                    <div style="font-size: small">
-                      <span style="color: purple">string</span>
-                    </div>
-                </td>
-                <td>always</td>
-                <td>
-                            <div>The operating system type (IOS or IOS-XE) running on the remote device</div>
-                    <br/>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="return-"></div>
                     <b>ansible_net_memfree_mb</b>
                     <a class="ansibleOptionLink" href="#return-" title="Permalink to this return value"></a>
                     <div style="font-size: small">
@@ -385,6 +370,21 @@ Common return values are documented `here <https://docs.ansible.com/ansible/late
                 <td>when hardware is configured</td>
                 <td>
                             <div>The total memory on the remote device in MiB</div>
+                    <br/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="return-"></div>
+                    <b>ansible_net_mestype</b>
+                    <a class="ansibleOptionLink" href="#return-" title="Permalink to this return value"></a>
+                    <div style="font-size: small">
+                      <span style="color: purple">string</span>
+                    </div>
+                </td>
+                <td>always</td>
+                <td>
+                            <div>The operating system type (IOS or IOS-XE) running on the remote device</div>
                     <br/>
                 </td>
             </tr>

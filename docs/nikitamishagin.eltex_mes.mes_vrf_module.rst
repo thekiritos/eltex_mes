@@ -1,8 +1,8 @@
-.. _nikitamishagin.eltex_mes.ios_vrf_module:
+.. _nikitamishagin.eltex_mes.mes_vrf_module:
 
 
 ********************************
-nikitamishagin.eltex_mes.ios_vrf
+nikitamishagin.eltex_mes.mes_vrf
 ********************************
 
 **Module to configure VRF definitions.**
@@ -653,19 +653,19 @@ Examples
 .. code-block:: yaml
 
     - name: Configure a vrf named management
-      cisco.ios.ios_vrf:
+      nikitamishagin.eltex_mes.mes_vrf:
         name: management
         description: oob mgmt vrf
         interfaces:
           - Management1
 
     - name: Remove a vrf named test
-      cisco.ios.ios_vrf:
+      nikitamishagin.eltex_mes.mes_vrf:
         name: test
         state: absent
 
     - name: Configure set of VRFs and purge any others
-      cisco.ios.ios_vrf:
+      nikitamishagin.eltex_mes.mes_vrf:
         vrfs:
           - red
           - blue
@@ -673,7 +673,7 @@ Examples
         purge: true
 
     - name: Creates a list of import RTs for the VRF with the same parameters
-      cisco.ios.ios_vrf:
+      nikitamishagin.eltex_mes.mes_vrf:
         name: test_import
         rd: 1:100
         route_import:
@@ -683,7 +683,7 @@ Examples
     - name:
         Creates a list of import RTs in address-family configuration submode for the
         VRF with the same parameters
-      cisco.ios.ios_vrf:
+      nikitamishagin.eltex_mes.mes_vrf:
         name: test_import_ipv4
         rd: 1:100
         route_import_ipv4:
@@ -693,7 +693,7 @@ Examples
     - name:
         Creates a list of import RTs in address-family configuration submode for the
         VRF with the same parameters
-      cisco.ios.ios_vrf:
+      nikitamishagin.eltex_mes.mes_vrf:
         name: test_import_ipv6
         rd: 1:100
         route_import_ipv6:
@@ -701,7 +701,7 @@ Examples
           - 3:100
 
     - name: Creates a list of export RTs for the VRF with the same parameters
-      cisco.ios.ios_vrf:
+      nikitamishagin.eltex_mes.mes_vrf:
         name: test_export
         rd: 1:100
         route_export:
@@ -711,7 +711,7 @@ Examples
     - name:
         Creates a list of export RTs in address-family configuration submode for the
         VRF with the same parameters
-      cisco.ios.ios_vrf:
+      nikitamishagin.eltex_mes.mes_vrf:
         name: test_export_ipv4
         rd: 1:100
         route_export_ipv4:
@@ -721,7 +721,7 @@ Examples
     - name:
         Creates a list of export RTs in address-family configuration submode for the
         VRF with the same parameters
-      cisco.ios.ios_vrf:
+      nikitamishagin.eltex_mes.mes_vrf:
         name: test_export_ipv6
         rd: 1:100
         route_export_ipv6:
@@ -731,7 +731,7 @@ Examples
     - name:
         Creates a list of import and export route targets for the VRF with the same
         parameters
-      cisco.ios.ios_vrf:
+      nikitamishagin.eltex_mes.mes_vrf:
         name: test_both
         rd: 1:100
         route_both:
@@ -741,7 +741,7 @@ Examples
     - name:
         Creates a list of import and export route targets in address-family configuration
         submode for the VRF with the same parameters
-      cisco.ios.ios_vrf:
+      nikitamishagin.eltex_mes.mes_vrf:
         name: test_both_ipv4
         rd: 1:100
         route_both_ipv4:
@@ -751,7 +751,7 @@ Examples
     - name:
         Creates a list of import and export route targets in address-family configuration
         submode for the VRF with the same parameters
-      cisco.ios.ios_vrf:
+      nikitamishagin.eltex_mes.mes_vrf:
         name: test_both_ipv6
         rd: 1:100
         route_both_ipv6:

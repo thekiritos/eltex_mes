@@ -1,8 +1,8 @@
-.. _nikitamishagin.eltex_mes.ios_vxlan_vtep_module:
+.. _nikitamishagin.eltex_mes.mes_vxlan_vtep_module:
 
 
 ***************************************
-nikitamishagin.eltex_mes.ios_vxlan_vtep
+nikitamishagin.eltex_mes.mes_vxlan_vtep
 ***************************************
 
 **Resource module to configure VXLAN VTEP interface.**
@@ -417,7 +417,7 @@ Examples
     #  member vni 50902 vrf blue
 
     # - name: Merge the provided configuration with the device configuration
-    #   cisco.ios.ios_vxlan_vtep:
+    #   nikitamishagin.eltex_mes.mes_vxlan_vtep:
     #     config:
     #     - interface: nve1
     #       source_interface: loopback2
@@ -479,7 +479,7 @@ Examples
     #  member vni 50901 vrf blue
 
     # - name: Replaces the device configuration with the provided configuration
-    #   cisco.ios.ios_vxlan_vtep:
+    #   nikitamishagin.eltex_mes.mes_vxlan_vtep:
     #     config:
     #     - interface: nve1
     #       source_interface: Loopback2
@@ -532,7 +532,7 @@ Examples
     #  member vni 10201 mcast-group FF0E:225::102
 
     # - name: "Delete VXLAN VTEP interface"
-    #   cisco.ios.ios_vxlan_vtep:
+    #   nikitamishagin.eltex_mes.mes_vxlan_vtep:
     #     config:
     #     - interface: nve1
     #     state: deleted
@@ -565,7 +565,7 @@ Examples
     #  member vni 10201 mcast-group 225.0.0.101 FF0E:225::101
 
     # - name: "Delete VXLAN VTEP interface with member VNIs"
-    #   cisco.ios.ios_vxlan_vtep:
+    #   nikitamishagin.eltex_mes.mes_vxlan_vtep:
     #     config:
     #     - interface: nve1
     #       source_interface: Loopback2
@@ -604,7 +604,7 @@ Examples
     #  member vni 10201 mcast-group FF0E:225::102
 
     # - name: "Delete VXLAN VTEP interface with no config"
-    #   cisco.ios.ios_vxlan_vtep:
+    #   nikitamishagin.eltex_mes.mes_vxlan_vtep:
     #     state: deleted
 
     # Commands Fired:

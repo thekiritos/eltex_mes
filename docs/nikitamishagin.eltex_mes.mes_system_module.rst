@@ -1,8 +1,8 @@
-.. _nikitamishagin.eltex_mes.ios_system_module:
+.. _nikitamishagin.eltex_mes.mes_system_module:
 
 
 ***********************************
-nikitamishagin.eltex_mes.ios_system
+nikitamishagin.eltex_mes.mes_system
 ***********************************
 
 **Module to manage the system attributes.**
@@ -168,8 +168,8 @@ Examples
 .. code-block:: yaml
 
     - name: Configure hostname and domain name
-      cisco.ios.ios_system:
-        hostname: ios01
+      nikitamishagin.eltex_mes.mes_system:
+        hostname: mes01
         domain_name: test.example.com
         domain_search:
           - ansible.com
@@ -177,16 +177,16 @@ Examples
           - cisco.com
 
     - name: Remove configuration
-      cisco.ios.ios_system:
+      nikitamishagin.eltex_mes.mes_system:
         state: absent
 
     - name: Configure DNS lookup sources
-      cisco.ios.ios_system:
+      nikitamishagin.eltex_mes.mes_system:
         lookup_source: MgmtEth0/0/CPU0/0
         lookup_enabled: true
 
     - name: Configure name servers
-      cisco.ios.ios_system:
+      nikitamishagin.eltex_mes.mes_system:
         name_servers:
           - 8.8.8.8
           - 8.8.4.4
@@ -219,7 +219,7 @@ Common return values are documented `here <https://docs.ansible.com/ansible/late
                             <div>The list of configuration mode commands to send to the device</div>
                     <br/>
                         <div style="font-size: smaller"><b>Sample:</b></div>
-                        <div style="font-size: smaller; color: blue; word-wrap: break-word; word-break: break-all;">[&#x27;hostname ios01&#x27;, &#x27;ip domain name test.example.com&#x27;]</div>
+                        <div style="font-size: smaller; color: blue; word-wrap: break-word; word-break: break-all;">[&#x27;hostname mes01&#x27;, &#x27;ip domain name test.example.com&#x27;]</div>
                 </td>
             </tr>
     </table>

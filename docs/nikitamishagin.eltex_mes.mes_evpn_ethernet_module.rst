@@ -1,8 +1,8 @@
-.. _nikitamishagin.eltex_mes.ios_evpn_ethernet_module:
+.. _nikitamishagin.eltex_mes.mes_evpn_ethernet_module:
 
 
 ******************************************
-nikitamishagin.eltex_mes.ios_evpn_ethernet
+nikitamishagin.eltex_mes.mes_evpn_ethernet
 ******************************************
 
 **Resource module to configure L2VPN EVPN Ethernet Segment.**
@@ -345,7 +345,7 @@ Examples
     # !
 
     - name: Gather facts of evpn ethernet segment
-      cisco.ios.ios_evpn_ethernet:
+      nikitamishagin.eltex_mes.mes_evpn_ethernet:
         config:
           - identifier:
               identifier_type: '0'
@@ -514,7 +514,7 @@ Examples
     # !
 
     - name: Gather facts of evpn ethernet segment
-      cisco.ios.ios_evpn_ethernet:
+      nikitamishagin.eltex_mes.mes_evpn_ethernet:
         config:
           - df_election:
               wait_time: 1
@@ -665,7 +665,7 @@ Examples
     # !
 
     - name: Gather facts of evpn ethernet segment
-      cisco.ios.ios_evpn_ethernet:
+      nikitamishagin.eltex_mes.mes_evpn_ethernet:
         config:
           - df_election:
               wait_time: 1
@@ -726,7 +726,7 @@ Examples
     # !
 
     - name: Gather facts of evpn ethernet segment
-      cisco.ios.ios_evpn_ethernet:
+      nikitamishagin.eltex_mes.mes_evpn_ethernet:
         config:
           - identifier:
               identifier_type: '0'
@@ -859,7 +859,7 @@ Examples
     # !
 
     - name: Gather facts of evpn ethernet segment
-      cisco.ios.ios_evpn_ethernet:
+      nikitamishagin.eltex_mes.mes_evpn_ethernet:
         config:
           - segment: '1'
           - segment: '2'
@@ -969,7 +969,7 @@ Examples
     # !
 
     - name: Gather facts of evpn ethernet segment
-      cisco.ios.ios_evpn_ethernet:
+      nikitamishagin.eltex_mes.mes_evpn_ethernet:
         config:
         state: gathered
 
@@ -1009,7 +1009,7 @@ Examples
     # Using rendered
 
     - name: Render commands with provided configuration
-      cisco.ios.ios_evpn_ethernet:
+      nikitamishagin.eltex_mes.mes_evpn_ethernet:
         config:
           - identifier:
               identifier_type: '0'
@@ -1085,8 +1085,8 @@ Examples
     # !
 
     - name: Parse the provided configuration
-      cisco.ios.ios_evpn_ethernet:
-        running_config: "{{ lookup('file', 'ios_ethernet_segment_parsed.cfg') }}"
+      nikitamishagin.eltex_mes.mes_evpn_ethernet:
+        running_config: "{{ lookup('file', 'mes_ethernet_segment_parsed.cfg') }}"
         state: parsed
 
     # Task Output

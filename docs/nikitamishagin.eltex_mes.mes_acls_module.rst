@@ -1,8 +1,8 @@
-.. _nikitamishagin.eltex_mes.ios_acls_module:
+.. _nikitamishagin.eltex_mes.mes_acls_module:
 
 
 *********************************
-nikitamishagin.eltex_mes.ios_acls
+nikitamishagin.eltex_mes.mes_acls
 *********************************
 
 **Resource module to configure ACLs.**
@@ -3901,7 +3901,7 @@ Examples
     #    10 deny icmp 192.0.2.0 0.0.0.255 192.0.3.0 0.0.0.255 echo dscp ef ttl eq 10
 
     - name: Merge provided configuration with device configuration
-      cisco.ios.ios_acls:
+      nikitamishagin.eltex_mes.mes_acls:
         config:
           - afi: ipv4
             acls:
@@ -4224,7 +4224,7 @@ Examples
     #    10 deny icmp 192.0.2.0 0.0.0.255 192.0.3.0 0.0.0.255 echo dscp ef ttl eq 10
 
     - name: Merge provided configuration with device configuration
-      cisco.ios.ios_acls:
+      nikitamishagin.eltex_mes.mes_acls:
         config:
           - afi: ipv4
             acls:
@@ -4264,7 +4264,7 @@ Examples
     #     10 deny tcp 192.0.2.0 0.0.0.255 192.0.3.0 0.0.0.255 eq www fin option traceroute ttl eq 10
 
     - name: Replaces device configuration of listed acls with provided configuration
-      cisco.ios.ios_acls:
+      nikitamishagin.eltex_mes.mes_acls:
         config:
           - afi: ipv4
             acls:
@@ -4611,7 +4611,7 @@ Examples
 
     - name: Replace remarks of ace with sequence 10
       # check_mode: true
-      cisco.ios.ios_acls:
+      nikitamishagin.eltex_mes.mes_acls:
         state: replaced
         config:
           - acls:
@@ -4778,7 +4778,7 @@ Examples
 
     - name: Replace remarks of ace with sequence 10
       # check_mode: true
-      cisco.ios.ios_acls:
+      nikitamishagin.eltex_mes.mes_acls:
         state: replaced
         config:
           - acls:
@@ -4942,7 +4942,7 @@ Examples
     #     10 deny tcp 192.0.2.0 0.0.0.255 192.0.3.0 0.0.0.255 eq www fin option traceroute ttl eq 10
 
     - name: Override device configuration of all acls with provided configuration
-      cisco.ios.ios_acls:
+      nikitamishagin.eltex_mes.mes_acls:
         config:
           - afi: ipv4
             acls:
@@ -5235,7 +5235,7 @@ Examples
     #  sequence 10 deny tcp any eq www any eq telnet ack dscp af11
 
     - name: Override remarks and ace configurations
-      cisco.ios.ios_acls:
+      nikitamishagin.eltex_mes.mes_acls:
         config:
           - afi: ipv4
             acls:
@@ -5560,7 +5560,7 @@ Examples
     #     10 deny tcp 192.0.2.0 0.0.0.255 192.0.3.0 0.0.0.255 eq www fin option traceroute ttl eq 10
 
     - name: "Delete ACLs (Note: This won't delete the all configured ACLs)"
-      cisco.ios.ios_acls:
+      nikitamishagin.eltex_mes.mes_acls:
         config:
           - afi: ipv4
             acls:
@@ -5761,7 +5761,7 @@ Examples
     #     sequence 10 deny tcp any eq www any eq telnet ack dscp af11
 
     - name: "Delete ACLs based on AFI (Note: This won't delete the all configured ACLs)"
-      cisco.ios.ios_acls:
+      nikitamishagin.eltex_mes.mes_acls:
         config:
           - afi: ipv4
         state: deleted
@@ -5945,7 +5945,7 @@ Examples
     #     sequence 10 deny tcp any eq www any eq telnet ack dscp af11
 
     - name: Delete ALL of configured ACLs
-      cisco.ios.ios_acls:
+      nikitamishagin.eltex_mes.mes_acls:
         state: deleted
 
     # Task Output
@@ -6107,7 +6107,7 @@ Examples
     #    sequence 10 deny tcp any eq www any eq telnet ack dscp af11
 
     - name: Gather ACLs configuration from target device
-      cisco.ios.ios_acls:
+      nikitamishagin.eltex_mes.mes_acls:
         state: gathered
 
     # Module Execution Result:
@@ -6238,7 +6238,7 @@ Examples
     # Using rendered
 
     - name: Render the provided configuration into platform specific configuration lines
-      cisco.ios.ios_acls:
+      nikitamishagin.eltex_mes.mes_acls:
         config:
           - afi: ipv4
             acls:
@@ -6299,7 +6299,7 @@ Examples
     # deny tcp any eq www any eq telnet ack dscp af11
 
     - name: Parse the commands for provided configuration
-      cisco.ios.ios_acls:
+      nikitamishagin.eltex_mes.mes_acls:
         running_config: "{{ lookup('file', 'parsed.cfg') }}"
         state: parsed
 

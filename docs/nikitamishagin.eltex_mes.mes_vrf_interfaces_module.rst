@@ -1,8 +1,8 @@
-.. _nikitamishagin.eltex_mes.ios_vrf_interfaces_module:
+.. _nikitamishagin.eltex_mes.mes_vrf_interfaces_module:
 
 
 *******************************************
-nikitamishagin.eltex_mes.ios_vrf_interfaces
+nikitamishagin.eltex_mes.mes_vrf_interfaces
 *******************************************
 
 **Manages VRF configuration on interfaces.**
@@ -169,7 +169,7 @@ Examples
     #  negotiation auto
 
     - name: Merge provided configuration with device configuration
-      cisco.ios.ios_vrf_interfaces:
+      nikitamishagin.eltex_mes.mes_vrf_interfaces:
         config:
           - name: GigabitEthernet1
           - name: GigabitEthernet2
@@ -247,7 +247,7 @@ Examples
     #  negotiation auto
 
     - name: Override device configuration with provided configuration
-      cisco.ios.ios_vrf_interfaces:
+      nikitamishagin.eltex_mes.mes_vrf_interfaces:
         config:
           - name: GigabitEthernet1
           - name: GigabitEthernet2
@@ -323,7 +323,7 @@ Examples
     #  negotiation auto
 
     - name: Gather listed VRF interfaces
-      cisco.ios.ios_vrf_interfaces:
+      nikitamishagin.eltex_mes.mes_vrf_interfaces:
         state: gathered
 
     # Task Output:
@@ -340,7 +340,7 @@ Examples
     # Using rendered
 
     - name: Render VRF configuration
-      cisco.ios.ios_vrf_interfaces:
+      nikitamishagin.eltex_mes.mes_vrf_interfaces:
         config:
           - name: GigabitEthernet1
           - name: GigabitEthernet2
@@ -377,7 +377,7 @@ Examples
     # !
 
     - name: Parse configuration from device running config
-      cisco.ios.ios_vrf_interfaces:
+      nikitamishagin.eltex_mes.mes_vrf_interfaces:
         running_config: "{{ lookup('file', 'parsed.cfg') }}"
         state: parsed
 
@@ -419,7 +419,7 @@ Examples
     #  negotiation auto
 
     - name: Replace device configuration of listed VRF interfaces with provided configuration
-      cisco.ios.ios_vrf_interfaces:
+      nikitamishagin.eltex_mes.mes_vrf_interfaces:
         config:
           - name: GigabitEthernet1
             vrf_name: vrf_D
@@ -485,7 +485,7 @@ Examples
     #  negotiation auto
 
     - name: Delete VRF configuration of specified interfaces
-      cisco.ios.ios_vrf_interfaces:
+      nikitamishagin.eltex_mes.mes_vrf_interfaces:
         config:
           - name: GigabitEthernet1
           - name: GigabitEthernet2

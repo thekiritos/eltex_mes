@@ -1,8 +1,8 @@
-.. _nikitamishagin.eltex_mes.ios_ospfv3_module:
+.. _nikitamishagin.eltex_mes.mes_ospfv3_module:
 
 
 ***********************************
-nikitamishagin.eltex_mes.ios_ospfv3
+nikitamishagin.eltex_mes.mes_ospfv3
 ***********************************
 
 **Resource module to configure OSPFv3.**
@@ -2075,7 +2075,7 @@ Parameters
                     <td class="elbow-placeholder"></td>
                 <td colspan="3">
                     <div class="ansibleOptionAnchor" id="parameter-"></div>
-                    <b>ios_if_index</b>
+                    <b>mes_if_index</b>
                     <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                     <div style="font-size: small">
                         <span style="color: purple">boolean</span>
@@ -6577,11 +6577,11 @@ Examples
     # Before state:
     # -------------
     #
-    # router-ios#sh running-config | section ^router ospfv3
-    # router-ios#
+    # router-mes#sh running-config | section ^router ospfv3
+    # router-mes#
 
     - name: Merge provided OSPFV3 configuration
-      cisco.ios.ios_ospfv3:
+      nikitamishagin.eltex_mes.mes_ospfv3:
         config:
           processes:
             - process_id: 1
@@ -6690,7 +6690,7 @@ Examples
     # After state:
     # -------------
     #
-    # router-ios#sh running-config | section ^router ospfv3
+    # router-mes#sh running-config | section ^router ospfv3
     # router ospfv3 1
     #  max-metric router-lsa on-startup 110
     #  area 10 nssa default-information-originate metric 10
@@ -6712,7 +6712,7 @@ Examples
     # Before state:
     # -------------
     #
-    # router-ios#sh running-config | section ^router ospfv3
+    # router-mes#sh running-config | section ^router ospfv3
     # router ospfv3 1
     #  max-metric router-lsa on-startup 110
     #  area 10 nssa default-information-originate metric 10
@@ -6730,7 +6730,7 @@ Examples
     #  exit-address-family
 
     - name: Delete provided OSPF V3 processes
-      cisco.ios.ios_ospfv3:
+      nikitamishagin.eltex_mes.mes_ospfv3:
         config:
           processes:
             - process_id: 1
@@ -6799,7 +6799,7 @@ Examples
     #
     # After state:
     # ------------
-    # router-ios#sh running-config | section ^router ospfv3
+    # router-mes#sh running-config | section ^router ospfv3
     # router ospfv3 200
     #  max-metric router-lsa on-startup 100
     #  auto-cost reference-bandwidth 4
@@ -6813,7 +6813,7 @@ Examples
     # Before state:
     # -------------
     #
-    # router-ios#sh running-config | section ^router ospfv3
+    # router-mes#sh running-config | section ^router ospfv3
     # router ospfv3 1
     #  max-metric router-lsa on-startup 110
     #  area 10 nssa default-information-originate metric 10
@@ -6831,7 +6831,7 @@ Examples
     #  exit-address-family
 
     - name: Delete all OSPF processes
-      cisco.ios.ios_ospfv3:
+      nikitamishagin.eltex_mes.mes_ospfv3:
         state: deleted
 
     # Task Output:
@@ -6884,8 +6884,8 @@ Examples
     #
     # After state:
     # ------------
-    # router-ios#sh running-config | section ^router ospfv3
-    # router-ios#
+    # router-mes#sh running-config | section ^router ospfv3
+    # router-mes#
 
 
     # Using overridden
@@ -6910,7 +6910,7 @@ Examples
     #  exit-address-family
 
     - name: Override provided OSPFV3 configuration
-      cisco.ios.ios_ospfv3:
+      nikitamishagin.eltex_mes.mes_ospfv3:
         config:
           processes:
             - process_id: 200
@@ -7018,7 +7018,7 @@ Examples
     # After state:
     # ------------
     #
-    # router-ios#sh running-config | section ^router ospfv3
+    # router-mes#sh running-config | section ^router ospfv3
     # router ospfv3 200
     #  max-metric router-lsa on-startup 200
     #  area 10 nssa default-information-originate metric 10
@@ -7033,7 +7033,7 @@ Examples
     # Before state:
     # -------------
     #
-    # router-ios#sh running-config | section ^router ospfv3
+    # router-mes#sh running-config | section ^router ospfv3
     # router ospfv3 1
     #  max-metric router-lsa on-startup 110
     #  area 10 nssa default-information-originate metric 10
@@ -7051,7 +7051,7 @@ Examples
     #  exit-address-family
 
     - name: Perform replace with provided configurations.
-      cisco.ios.ios_ospfv3:
+      nikitamishagin.eltex_mes.mes_ospfv3:
         config:
           processes:
             - process_id: 200
@@ -7177,7 +7177,7 @@ Examples
     #
     # After state:
     # -------------
-    # router-ios#sh running-config | section ^router ospfv3
+    # router-mes#sh running-config | section ^router ospfv3
     # router ospfv3 1
     #  max-metric router-lsa on-startup 110
     #  area 10 nssa default-information-originate metric 10
@@ -7200,7 +7200,7 @@ Examples
     # Before state:
     # -------------
     #
-    # router-ios#sh running-config | section ^router ospfv3
+    # router-mes#sh running-config | section ^router ospfv3
     # router ospfv3 1
     #  max-metric router-lsa on-startup 110
     #  area 10 nssa default-information-originate metric 10
@@ -7218,7 +7218,7 @@ Examples
     #  exit-address-family
 
     - name: Gather OSPFV3 provided configurations
-      cisco.ios.ios_ospfv3:
+      nikitamishagin.eltex_mes.mes_ospfv3:
         config:
         state: gathered
 
@@ -7267,7 +7267,7 @@ Examples
     # After state:
     # ------------
     #
-    # router-ios#sh running-config | section ^router ospfv3
+    # router-mes#sh running-config | section ^router ospfv3
     # router ospfv3 1
     #  max-metric router-lsa on-startup 110
     #  area 10 nssa default-information-originate metric 10
@@ -7287,7 +7287,7 @@ Examples
     # Using Rendered
 
     - name: Render the commands for provided  configuration
-      cisco.ios.ios_ospfv3:
+      nikitamishagin.eltex_mes.mes_ospfv3:
         config:
           processes:
             - process_id: 1
@@ -7375,7 +7375,7 @@ Examples
     #  exit-address-family
 
     - name: Parse the provided configuration and display structured ospfv3 facts.
-      cisco.ios.ios_ospfv3:
+      nikitamishagin.eltex_mes.mes_ospfv3:
         running_config: "{{ lookup('file', 'parsed.cfg') }}"
         state: parsed
 

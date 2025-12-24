@@ -1,8 +1,8 @@
-.. _nikitamishagin.eltex_mes.ios_l2_interfaces_module:
+.. _nikitamishagin.eltex_mes.mes_l2_interfaces_module:
 
 
 ******************************************
-nikitamishagin.eltex_mes.ios_l2_interfaces
+nikitamishagin.eltex_mes.mes_l2_interfaces
 ******************************************
 
 **Resource module to configure L2 interfaces.**
@@ -1098,7 +1098,7 @@ Examples
     #  negotiation auto
 
     - name: Merge provided configuration with device configuration
-      cisco.ios.ios_l2_interfaces:
+      nikitamishagin.eltex_mes.mes_l2_interfaces:
         config:
           - name: GigabitEthernet0/1
             mode: access
@@ -1190,7 +1190,7 @@ Examples
     #  negotiation auto
 
     - name: Replaces device configuration with provided configuration
-      cisco.ios.ios_l2_interfaces:
+      nikitamishagin.eltex_mes.mes_l2_interfaces:
         config:
           - name: GigabitEthernet0/2
             trunk:
@@ -1266,7 +1266,7 @@ Examples
     #  negotiation auto
 
     - name: Override device configuration of all l2 interfaces with provided configuration
-      cisco.ios.ios_l2_interfaces:
+      nikitamishagin.eltex_mes.mes_l2_interfaces:
         config:
           - name: GigabitEthernet0/2
             access:
@@ -1339,8 +1339,8 @@ Examples
     #  media-type rj45
     #  negotiation auto
 
-    - name: Delete IOS L2 interfaces as in given arguments
-      cisco.ios.ios_l2_interfaces:
+    - name: Delete mes L2 interfaces as in given arguments
+      nikitamishagin.eltex_mes.mes_l2_interfaces:
         config:
           - name: GigabitEthernet0/1
         state: deleted
@@ -1419,8 +1419,8 @@ Examples
     #  media-type rj45
     #  negotiation auto
 
-    - name: Delete IOS L2 interfaces as in given arguments
-      cisco.ios.ios_l2_interfaces:
+    - name: Delete mes L2 interfaces as in given arguments
+      nikitamishagin.eltex_mes.mes_l2_interfaces:
         state: deleted
 
     # Task Output
@@ -1488,7 +1488,7 @@ Examples
     #  negotiation auto
 
     - name: Gather facts for l2 interfaces
-      cisco.ios.ios_l2_interfaces:
+      nikitamishagin.eltex_mes.mes_l2_interfaces:
         config:
         state: gathered
 
@@ -1515,7 +1515,7 @@ Examples
     # Using rendered
 
     - name: Render the commands for provided  configuration
-      cisco.ios.ios_l2_interfaces:
+      nikitamishagin.eltex_mes.mes_l2_interfaces:
         config:
           - name: GigabitEthernet0/1
             access:
@@ -1560,7 +1560,7 @@ Examples
     #  negotiation auto
 
     - name: Parse the commands for provided configuration
-      cisco.ios.ios_l2_interfaces:
+      nikitamishagin.eltex_mes.mes_l2_interfaces:
         running_config: "{{ lookup('file', 'parsed.cfg') }}"
         state: parsed
 

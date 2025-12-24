@@ -1,8 +1,8 @@
-.. _nikitamishagin.eltex_mes.ios_evpn_global_module:
+.. _nikitamishagin.eltex_mes.mes_evpn_global_module:
 
 
 ****************************************
-nikitamishagin.eltex_mes.ios_evpn_global
+nikitamishagin.eltex_mes.mes_evpn_global
 ****************************************
 
 **Resource module to configure L2VPN EVPN.**
@@ -365,7 +365,7 @@ Examples
     #  default-gateway advertise
 
     - name: Merge provided configuration with device configuration
-      cisco.ios.ios_evpn_global:
+      nikitamishagin.eltex_mes.mes_evpn_global:
         config:
           replication_type: ingress
           route_target:
@@ -428,7 +428,7 @@ Examples
     #  route-target auto vni
 
     - name: Replaces device configuration for EVPN global with provided configuration
-      cisco.ios.ios_evpn_global:
+      nikitamishagin.eltex_mes.mes_evpn_global:
         config:
           replication_type: static
           router_id: Loopback2
@@ -491,7 +491,7 @@ Examples
     #  default-gateway advertise
 
     - name: Delete EVPN global
-      cisco.ios.ios_evpn_global:
+      nikitamishagin.eltex_mes.mes_evpn_global:
         config:
         state: deleted
 
@@ -527,7 +527,7 @@ Examples
     #  route-target auto vni
 
     - name: Gather facts of l2vpn evpn
-      cisco.ios.ios_evpn_global:
+      nikitamishagin.eltex_mes.mes_evpn_global:
         config:
         state: gathered
 
@@ -547,7 +547,7 @@ Examples
     # Using rendered
 
     - name: Render the commands for provided configuration
-      cisco.ios.ios_evpn_global:
+      nikitamishagin.eltex_mes.mes_evpn_global:
         config:
           replication_type: static
           route_target:
@@ -575,7 +575,7 @@ Examples
     #  route-target auto vni
 
     - name: Parse the provided configuration
-      cisco.ios.ios_evpn_global:
+      nikitamishagin.eltex_mes.mes_evpn_global:
         running_config: "{{ lookup('file', 'parsed.cfg') }}"
         state: parsed
 

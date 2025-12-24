@@ -1,8 +1,8 @@
-.. _nikitamishagin.eltex_mes.ios_lldp_interfaces_module:
+.. _nikitamishagin.eltex_mes.mes_lldp_interfaces_module:
 
 
 ********************************************
-nikitamishagin.eltex_mes.ios_lldp_interfaces
+nikitamishagin.eltex_mes.mes_lldp_interfaces
 ********************************************
 
 **Resource module to configure LLDP interfaces.**
@@ -280,7 +280,7 @@ Examples
     #
 
     - name: Merge provided configuration with device configuration
-      cisco.ios.ios_lldp_interfaces:
+      nikitamishagin.eltex_mes.mes_lldp_interfaces:
         config:
           - name: GigabitEthernet0/1
             receive: true
@@ -351,7 +351,7 @@ Examples
     #    Rx state: WAIT FOR FRAME
 
     - name: Override device configuration of all lldp_interfaces with provided configuration
-      cisco.ios.ios_lldp_interfaces:
+      nikitamishagin.eltex_mes.mes_lldp_interfaces:
         config:
           - name: GigabitEthernet0/2
             receive: true
@@ -418,7 +418,7 @@ Examples
     #
 
     - name: Replaces device configuration of listed lldp_interfaces with provided configuration
-      cisco.ios.ios_lldp_interfaces:
+      nikitamishagin.eltex_mes.mes_lldp_interfaces:
         config:
           - name: GigabitEthernet0/2
             receive: true
@@ -487,7 +487,7 @@ Examples
     #    Rx state: WAIT FOR FRAME
 
     - name: "Delete LLDP attributes of given interfaces (Note: This won't delete the interface itself)"
-      cisco.ios.ios_lldp_interfaces:
+      nikitamishagin.eltex_mes.mes_lldp_interfaces:
         config:
           - name: GigabitEthernet0/1
         state: deleted
@@ -553,7 +553,7 @@ Examples
     #    Rx state: WAIT FOR FRAME
 
     - name: "Delete LLDP attributes for all configured interfaces (Note: This won't delete the interface itself)"
-      cisco.ios.ios_lldp_interfaces:
+      nikitamishagin.eltex_mes.mes_lldp_interfaces:
         state: deleted
 
     # After state:
@@ -609,7 +609,7 @@ Examples
     #    Rx state: WAIT FOR FRAME
 
     - name: Gather listed LLDP interfaces with provided configurations
-      cisco.ios.ios_lldp_interfaces:
+      nikitamishagin.eltex_mes.mes_lldp_interfaces:
         config:
         state: gathered
 
@@ -659,7 +659,7 @@ Examples
     # Using Rendered
 
     - name: Render the commands for provided  configuration
-      cisco.ios.ios_lldp_interfaces:
+      nikitamishagin.eltex_mes.mes_lldp_interfaces:
         config:
           - name: GigabitEthernet0/0
             receive: true
@@ -709,7 +709,7 @@ Examples
     #   Rx state: INIT
 
     - name: Parse the commands for provided configuration
-      cisco.ios.ios_lldp_interfaces:
+      nikitamishagin.eltex_mes.mes_lldp_interfaces:
         running_config: "{{ lookup('file', 'parsed.cfg') }}"
         state: parsed
 

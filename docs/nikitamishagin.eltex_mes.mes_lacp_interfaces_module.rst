@@ -1,8 +1,8 @@
-.. _nikitamishagin.eltex_mes.ios_lacp_interfaces_module:
+.. _nikitamishagin.eltex_mes.mes_lacp_interfaces_module:
 
 
 ********************************************
-nikitamishagin.eltex_mes.ios_lacp_interfaces
+nikitamishagin.eltex_mes.mes_lacp_interfaces
 ********************************************
 
 **Resource module to configure LACP interfaces.**
@@ -201,7 +201,7 @@ Examples
     #  shutdown
 
     - name: Merge provided configuration with device configuration
-      cisco.ios.ios_lacp_interfaces:
+      nikitamishagin.eltex_mes.mes_lacp_interfaces:
         config:
           - name: GigabitEthernet0/1
             port_priority: 10
@@ -254,7 +254,7 @@ Examples
     #  lacp port-priority 30
 
     - name: Override device configuration of all lacp_interfaces with provided configuration
-      cisco.ios.ios_lacp_interfaces:
+      nikitamishagin.eltex_mes.mes_lacp_interfaces:
         config:
           - name: GigabitEthernet0/1
             port_priority: 20
@@ -299,7 +299,7 @@ Examples
     #  lacp port-priority 30
 
     - name: Replaces device configuration of listed lacp_interfaces with provided configuration
-      cisco.ios.ios_lacp_interfaces:
+      nikitamishagin.eltex_mes.mes_lacp_interfaces:
         config:
           - name: GigabitEthernet0/3
             port_priority: 40
@@ -348,7 +348,7 @@ Examples
     #  lacp port-priority 30
 
     - name: "Delete LACP attributes of given interfaces (Note: This won't delete the interface itself)"
-      cisco.ios.ios_lacp_interfaces:
+      nikitamishagin.eltex_mes.mes_lacp_interfaces:
         config:
           - name: GigabitEthernet0/1
         state: deleted
@@ -392,7 +392,7 @@ Examples
     #  lacp port-priority 30
 
     - name: "Delete LACP attributes for all configured interfaces (Note: This won't delete the interface itself)"
-      cisco.ios.ios_lacp_interfaces:
+      nikitamishagin.eltex_mes.mes_lacp_interfaces:
         state: deleted
 
     # After state:
@@ -427,7 +427,7 @@ Examples
     #  lacp port-priority 20
 
     - name: Gather listed LACP interfaces with provided configurations
-      cisco.ios.ios_lacp_interfaces:
+      nikitamishagin.eltex_mes.mes_lacp_interfaces:
         config:
         state: gathered
 
@@ -475,7 +475,7 @@ Examples
     # Using Rendered
 
     - name: Render the commands for provided  configuration
-      cisco.ios.ios_lacp_interfaces:
+      nikitamishagin.eltex_mes.mes_lacp_interfaces:
         config:
           - name: GigabitEthernet0/1
             port_priority: 10
@@ -512,7 +512,7 @@ Examples
     # lacp max-bundle 2 fast-switchover
 
     - name: Parse the commands for provided configuration
-      cisco.ios.ios_lacp_interfaces:
+      nikitamishagin.eltex_mes.mes_lacp_interfaces:
         running_config: "{{ lookup('file', 'parsed.cfg') }}"
         state: parsed
 

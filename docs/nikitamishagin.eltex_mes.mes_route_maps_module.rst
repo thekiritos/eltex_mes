@@ -1,8 +1,8 @@
-.. _nikitamishagin.eltex_mes.ios_route_maps_module:
+.. _nikitamishagin.eltex_mes.mes_route_maps_module:
 
 
 ***************************************
-nikitamishagin.eltex_mes.ios_route_maps
+nikitamishagin.eltex_mes.mes_route_maps
 ***************************************
 
 **Resource module to configure route maps.**
@@ -5713,7 +5713,7 @@ Examples
     # Before state:
     # -------------
     #
-    # router-ios#sh running-config | section ^route-map
+    # router-mes#sh running-config | section ^route-map
     # route-map test_1 deny 10
     #  description this is test route
     #  match ip next-hop prefix-list test_2_new test_1_new
@@ -5746,7 +5746,7 @@ Examples
     #  set ip next-hop recursive global 198.51.110.1
 
     - name: Delete provided Route maps config
-      cisco.ios.ios_route_maps:
+      nikitamishagin.eltex_mes.mes_route_maps:
         config:
           - route_map: test_1
         state: deleted
@@ -5760,7 +5760,7 @@ Examples
 
     # After state:
     # -------------
-    # router-ios#sh running-config | section ^route-map
+    # router-mes#sh running-config | section ^route-map
     # route-map test_2 deny 10
     #  match security-group source tag 10 20
     #  match local-preference 55 105
@@ -5782,7 +5782,7 @@ Examples
     # Before state:
     # -------------
     #
-    # router-ios#sh running-config | section ^route-map
+    # router-mes#sh running-config | section ^route-map
     # route-map test_1 deny 10
     #  description this is test route
     #  match ip next-hop prefix-list test_2_new test_1_new
@@ -5815,7 +5815,7 @@ Examples
     #  set ip next-hop recursive global 198.51.110.1
 
     - name: Delete all Route maps config
-      cisco.ios.ios_route_maps:
+      nikitamishagin.eltex_mes.mes_route_maps:
         state: deleted
 
     # Commands Fired:
@@ -5828,19 +5828,19 @@ Examples
 
     # After state:
     # -------------
-    # router-ios#sh running-config | section ^route-map
-    # router-ios#
+    # router-mes#sh running-config | section ^route-map
+    # router-mes#
 
     # Using merged
 
     # Before state:
     # -------------
     #
-    # router-ios#sh running-config | section ^route-map
-    # router-ios#
+    # router-mes#sh running-config | section ^route-map
+    # router-mes#
 
     - name: Merge provided Route maps configuration
-      cisco.ios.ios_route_maps:
+      nikitamishagin.eltex_mes.mes_route_maps:
         config:
           - route_map: test_1
             entries:
@@ -5970,7 +5970,7 @@ Examples
     # After state:
     # -------------
     #
-    # router-ios#sh running-config | section ^route-map
+    # router-mes#sh running-config | section ^route-map
     # route-map test_1 deny 10
     #  description this is test route
     #  match ip next-hop prefix-list test_2_new test_1_new
@@ -6007,7 +6007,7 @@ Examples
     # Before state:
     # -------------
     #
-    # router-ios#sh running-config | section ^route-map
+    # router-mes#sh running-config | section ^route-map
     # route-map test_1 deny 10
     #  description this is test route
     #  match ip next-hop prefix-list test_2_new test_1_new
@@ -6040,7 +6040,7 @@ Examples
     #  set ip next-hop recursive global 198.51.110.1
 
     - name: Override provided Route maps configuration
-      cisco.ios.ios_route_maps:
+      nikitamishagin.eltex_mes.mes_route_maps:
         config:
           - route_map: test_1
             entries:
@@ -6164,7 +6164,7 @@ Examples
     # After state:
     # -------------
     #
-    # router-ios#sh running-config | section ^route-map
+    # router-mes#sh running-config | section ^route-map
     # route-map test_override deny 10
     #  match security-group source tag 15 20
     #  match local-preference 110 105
@@ -6196,7 +6196,7 @@ Examples
     # Before state:
     # -------------
     #
-    # router-ios#sh running-config | section ^route-map
+    # router-mes#sh running-config | section ^route-map
     # route-map test_1 deny 10
     #  description this is test route
     #  match ip next-hop prefix-list test_2_new test_1_new
@@ -6229,7 +6229,7 @@ Examples
     #  set ip next-hop recursive global 198.51.110.1
 
     - name: Replaced provided Route maps configuration
-      cisco.ios.ios_route_maps:
+      nikitamishagin.eltex_mes.mes_route_maps:
         config:
           - route_map: test_1
             entries:
@@ -6351,7 +6351,7 @@ Examples
     # After state:
     # -------------
     #
-    # router-ios#sh running-config | section ^route-map
+    # router-mes#sh running-config | section ^route-map
     # route-map test_replaced deny 10
     #  match security-group source tag 15 20
     #  match local-preference 110 105
@@ -6398,7 +6398,7 @@ Examples
     # Before state:
     # -------------
     #
-    # router-ios#sh running-config | section ^route-map
+    # router-mes#sh running-config | section ^route-map
     # route-map test_1 deny 10
     #  description this is test route
     #  match ip next-hop prefix-list test_2_new test_1_new
@@ -6431,7 +6431,7 @@ Examples
     #  set ip next-hop recursive global 198.51.110.1
 
     - name: Gather Route maps provided configurations
-      cisco.ios.ios_route_maps:
+      nikitamishagin.eltex_mes.mes_route_maps:
         config:
         state: gathered
 
@@ -6587,7 +6587,7 @@ Examples
     # After state:
     # ------------
     #
-    # router-ios#sh running-config | section ^route-map
+    # router-mes#sh running-config | section ^route-map
     # route-map test_1 deny 10
     #  description this is test route
     #  match ip next-hop prefix-list test_2_new test_1_new
@@ -6622,7 +6622,7 @@ Examples
     # Using Rendered
 
     - name: Render the commands for provided  configuration
-      cisco.ios.ios_route_maps:
+      nikitamishagin.eltex_mes.mes_route_maps:
         config:
           - route_map: test_1
             entries:
@@ -6786,7 +6786,7 @@ Examples
     #  set ip next-hop recursive global 198.51.110.1
 
     - name: Parse the provided configuration with the existing running configuration
-      cisco.ios.ios_route_maps:
+      nikitamishagin.eltex_mes.mes_route_maps:
         running_config: "{{ lookup('file', 'parsed.cfg') }}"
         state: parsed
 

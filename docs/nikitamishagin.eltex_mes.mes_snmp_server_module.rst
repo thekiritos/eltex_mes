@@ -1,8 +1,8 @@
-.. _nikitamishagin.eltex_mes.ios_snmp_server_module:
+.. _nikitamishagin.eltex_mes.mes_snmp_server_module:
 
 
 ****************************************
-nikitamishagin.eltex_mes.ios_snmp_server
+nikitamishagin.eltex_mes.mes_snmp_server
 ****************************************
 
 **Resource module to configure snmp server.**
@@ -9011,14 +9011,14 @@ Examples
     # Before state:
     # -------------
 
-    # router-ios#show running-config | section ^snmp-server
+    # router-mes#show running-config | section ^snmp-server
     # --------------------- EMPTY -----------------
 
     # Merged play:
     # ------------
 
     - name: Apply the provided configuration
-      cisco.ios.ios_snmp_server:
+      nikitamishagin.eltex_mes.mes_snmp_server:
         config:
           communities:
             - acl_v4: testACL
@@ -9137,7 +9137,7 @@ Examples
     # After state:
     # ------------
 
-    # router-ios#show running-config | section ^snmp-server
+    # router-mes#show running-config | section ^snmp-server
     # snmp-server engineID remote 172.16.0.12 udp-port 25 AB0C5342FF0F
     # snmp-server user userPaul dev v1 access 24
     # snmp-server group mergedGroup v3 auth
@@ -9169,7 +9169,7 @@ Examples
     # Before state:
     # -------------
 
-    # router-ios#show running-config | section ^snmp-server
+    # router-mes#show running-config | section ^snmp-server
     # snmp-server engineID remote 172.16.0.12 udp-port 25 AB0C5342FF0F
     # snmp-server user userPaul dev v1 access 24
     # snmp-server group mergedGroup v3 auth
@@ -9200,7 +9200,7 @@ Examples
     # -------------
 
     - name: Remove all existing configuration
-      cisco.ios.ios_snmp_server:
+      nikitamishagin.eltex_mes.mes_snmp_server:
         state: deleted
 
     # Commands Fired:
@@ -9237,7 +9237,7 @@ Examples
     # After state:
     # ------------
 
-    # router-ios#show running-config | section ^snmp-server
+    # router-mes#show running-config | section ^snmp-server
     # --------------------- EMPTY -----------------
 
     # Using state: overridden
@@ -9245,7 +9245,7 @@ Examples
     # Before state:
     # -------------
 
-    # router-ios#show running-config | section ^snmp-server
+    # router-mes#show running-config | section ^snmp-server
     # snmp-server engineID remote 172.16.0.12 udp-port 25 AB0C5342FF0F
     # snmp-server user userPaul dev v1 access 24
     # snmp-server group mergedGroup v3 auth
@@ -9276,7 +9276,7 @@ Examples
     # ----------------
 
     - name: Override commands with provided configuration
-      cisco.ios.ios_snmp_server:
+      nikitamishagin.eltex_mes.mes_snmp_server:
         config:
           location: "location entry for snmp"
           packet_size: 500
@@ -9322,7 +9322,7 @@ Examples
     # After state:
     # ------------
 
-    # router-ios#show running-config | section ^snmp-server
+    # router-mes#show running-config | section ^snmp-server
     # snmp-server community communityOverriden RW acl_uq
     # snmp-server packetsize 500
     # snmp-server location location entry for snmp
@@ -9332,7 +9332,7 @@ Examples
     # Before state:
     # -------------
 
-    # router-ios#show running-config | section ^snmp-server
+    # router-mes#show running-config | section ^snmp-server
     # snmp-server community communityOverriden RW acl_uq
     # snmp-server packetsize 500
     # snmp-server location location entry for snmp
@@ -9341,7 +9341,7 @@ Examples
     # --------------
 
     - name: Replace commands with provided configuration
-      cisco.ios.ios_snmp_server:
+      nikitamishagin.eltex_mes.mes_snmp_server:
         config:
           location: "updated location entry"
           packet_size: 500
@@ -9361,7 +9361,7 @@ Examples
     # After state:
     # ------------
 
-    # router-ios#show running-config | section ^snmp-server
+    # router-mes#show running-config | section ^snmp-server
     # snmp-server community communityOverriden RW acl_uq
     # snmp-server packetsize 500
     # snmp-server location updated location entry
@@ -9371,7 +9371,7 @@ Examples
     # Before state:
     # -------------
 
-    # router-ios#show running-config | section ^snmp-server
+    # router-mes#show running-config | section ^snmp-server
     # snmp-server engineID remote 172.16.0.12 udp-port 25 AB0C5342FF0F
     # snmp-server user userPaul dev v1 access 24
     # snmp-server group mergedGroup v3 auth
@@ -9405,7 +9405,7 @@ Examples
     # --------------
 
     - name: Gather listed snmp config
-      cisco.ios.ios_snmp_server:
+      nikitamishagin.eltex_mes.mes_snmp_server:
         state: gathered
 
     # Module Execution Result:
@@ -9543,7 +9543,7 @@ Examples
     # --------------
 
     - name: Render the commands for provided configuration
-      cisco.ios.ios_snmp_server:
+      nikitamishagin.eltex_mes.mes_snmp_server:
         config:
           accounting:
             command: default
@@ -9909,7 +9909,7 @@ Examples
     # ------------
 
     - name: Parse the provided configuration with the existing running configuration
-      cisco.ios.ios_snmp_server:
+      nikitamishagin.eltex_mes.mes_snmp_server:
         running_config: "{{ lookup('file', 'parsed.cfg') }}"
         state: parsed
 

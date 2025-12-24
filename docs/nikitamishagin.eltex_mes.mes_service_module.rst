@@ -1,8 +1,8 @@
-.. _nikitamishagin.eltex_mes.ios_service_module:
+.. _nikitamishagin.eltex_mes.mes_service_module:
 
 
 ************************************
-nikitamishagin.eltex_mes.ios_service
+nikitamishagin.eltex_mes.mes_service
 ************************************
 
 **Resource module to configure service.**
@@ -1093,7 +1093,7 @@ Examples
     # Before state:
     # -------------
 
-    # router-ios#show running-config all | section ^service
+    # router-mes#show running-config all | section ^service
     # service slave-log
     # service timestamps debug datetime msec
     # service timestamps log datetime msec
@@ -1105,7 +1105,7 @@ Examples
     # service password-recovery
 
     - name: Merge provided configuration with device configuration
-      cisco.ios.ios_service:
+      nikitamishagin.eltex_mes.mes_service:
         config:
           tcp_keepalives_in: true
           tcp_keepalives_out: true
@@ -1168,7 +1168,7 @@ Examples
     # After state:
     # ------------
 
-    # router-ios#show running-config all | section ^service
+    # router-mes#show running-config all | section ^service
     # service slave-log
     # service tcp-keepalives-in
     # service tcp-keepalives-out
@@ -1187,7 +1187,7 @@ Examples
     # Before state:
     # -------------
 
-    # router-ios#show running-config all | section ^service
+    # router-mes#show running-config all | section ^service
     # service slave-log
     # service tcp-keepalives-in
     # service tcp-keepalives-out
@@ -1202,7 +1202,7 @@ Examples
     # service password-recovery
 
     - name: Replaces device configuration of services with provided configuration
-      cisco.ios.ios_service:
+      nikitamishagin.eltex_mes.mes_service:
         config:
           timestamps:
             - msg: log
@@ -1273,7 +1273,7 @@ Examples
     # After state:
     # ------------
 
-    # router-ios#show running-config all | section ^service
+    # router-mes#show running-config all | section ^service
     # service slave-log
     # service timestamps debug datetime
     # service timestamps log datetime msec localtime show-timezone year
@@ -1289,7 +1289,7 @@ Examples
     # Before state:
     # -------------
 
-    # router-ios#show running-config all | section ^service
+    # router-mes#show running-config all | section ^service
     # service slave-log
     # service timestamps debug datetime
     # service timestamps log datetime msec localtime show-timezone year
@@ -1301,7 +1301,7 @@ Examples
     # service password-recovery
 
     - name: "Delete service configuration and restore default configuration for some important service (those with a default value in module)"
-      cisco.ios.ios_service:
+      nikitamishagin.eltex_mes.mes_service:
         state: deleted
 
     # Task Output
@@ -1340,7 +1340,7 @@ Examples
     # After state:
     # ------------
     #
-    # router-ios#show running-config all | section ^service
+    # router-mes#show running-config all | section ^service
     # service slave-log
     # service private-config-encryption
     # service prompt config
@@ -1353,7 +1353,7 @@ Examples
     # Before state:
     # -------------
     #
-    # router-ios#show running-config all | section ^service
+    # router-mes#show running-config all | section ^service
     # service slave-log
     # service timestamps debug datetime
     # service timestamps log datetime msec localtime show-timezone year
@@ -1365,7 +1365,7 @@ Examples
     # service password-recovery
 
     - name: Gather facts of interfaces
-      cisco.ios.ios_service:
+      nikitamishagin.eltex_mes.mes_service:
         config:
         state: gathered
 
@@ -1394,7 +1394,7 @@ Examples
     # Using rendered
 
     - name: Render the commands for provided configuration
-      cisco.ios.ios_service:
+      nikitamishagin.eltex_mes.mes_service:
         config:
           timestamps:
             - msg: log
@@ -1438,7 +1438,7 @@ Examples
     # service counters max age 5
 
     - name: Parse the provided configuration
-      cisco.ios.ios_service:
+      nikitamishagin.eltex_mes.mes_service:
         running_config: "{{ lookup('file', 'parsed.cfg') }}"
         state: parsed
 

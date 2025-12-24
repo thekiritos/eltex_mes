@@ -1,8 +1,8 @@
-.. _nikitamishagin.eltex_mes.ios_static_routes_module:
+.. _nikitamishagin.eltex_mes.mes_static_routes_module:
 
 
 ******************************************
-nikitamishagin.eltex_mes.ios_static_routes
+nikitamishagin.eltex_mes.mes_static_routes
 ******************************************
 
 **Resource module to configure static routes.**
@@ -489,7 +489,7 @@ Examples
     # vios#show running-config | include ip route|ipv6 route
 
     - name: Merge provided configuration with device configuration
-      cisco.ios.ios_static_routes:
+      nikitamishagin.eltex_mes.mes_static_routes:
         config:
           - vrf: blue
             address_families:
@@ -593,7 +593,7 @@ Examples
     # ipv6 route 2001:DB8:0:3::/64 2001:DB8:0:3::2 tag 105 name merged_v6
 
     - name: Replace provided configuration with device configuration
-      cisco.ios.ios_static_routes:
+      nikitamishagin.eltex_mes.mes_static_routes:
         config:
           - address_families:
               - afi: ipv4
@@ -695,7 +695,7 @@ Examples
     # ipv6 route 2001:DB8:0:3::/64 2001:DB8:0:3::2 tag 105 name merged_v6
 
     - name: Override provided configuration with device configuration
-      cisco.ios.ios_static_routes:
+      nikitamishagin.eltex_mes.mes_static_routes:
         config:
           - vrf: blue
             address_families:
@@ -774,7 +774,7 @@ Examples
     # ipv6 route 2001:DB8:0:3::/64 2001:DB8:0:3::2 tag 105 name test_v6
 
     - name: Delete the exact static routes, with all the static routes explicitly mentioned in want
-      cisco.ios.ios_static_routes:
+      nikitamishagin.eltex_mes.mes_static_routes:
         config:
           - vrf: blue
             address_families:
@@ -872,7 +872,7 @@ Examples
     # ipv6 route 2001:DB8:0:3::/64 2001:DB8:0:3::2 tag 105 name test_v6
 
     - name: Delete destination specific static routes
-      cisco.ios.ios_static_routes:
+      nikitamishagin.eltex_mes.mes_static_routes:
         config:
           - address_families:
               - afi: ipv4
@@ -960,7 +960,7 @@ Examples
     # ipv6 route 2001:DB8:0:3::/64 2001:DB8:0:3::2 tag 105 name test_v6
 
     - name: Delete vrf specific static routes
-      cisco.ios.ios_static_routes:
+      nikitamishagin.eltex_mes.mes_static_routes:
         config:
           - vrf: blue
         state: deleted
@@ -1049,7 +1049,7 @@ Examples
     # ipv6 route 2001:DB8:0:3::/64 2001:DB8:0:3::2 tag 105 name test_v6
 
     - name: Delete ALL configured static routes
-      cisco.ios.ios_static_routes:
+      nikitamishagin.eltex_mes.mes_static_routes:
         state: deleted
 
     # Task Output
@@ -1114,7 +1114,7 @@ Examples
     # ipv6 route 2001:DB8:0:3::/64 2001:DB8:0:3::2 tag 105 name test_v6
 
     - name: Gather facts of static routes
-      cisco.ios.ios_static_routes:
+      nikitamishagin.eltex_mes.mes_static_routes:
         config:
         state: gathered
 
@@ -1158,7 +1158,7 @@ Examples
     # Using rendered
 
     - name: Render the commands for provided configuration
-      cisco.ios.ios_static_routes:
+      nikitamishagin.eltex_mes.mes_static_routes:
         config:
           - vrf: blue
             address_families:
@@ -1216,7 +1216,7 @@ Examples
     # ipv6 route 2001:DB8:0:3::/64 2001:DB8:0:3::2 tag 105 name test_v6
 
     - name: Parse the provided configuration
-      cisco.ios.ios_static_routes:
+      nikitamishagin.eltex_mes.mes_static_routes:
         running_config: "{{ lookup('file', 'parsed.cfg') }}"
         state: parsed
 

@@ -1,8 +1,8 @@
-.. _nikitamishagin.eltex_mes.ios_user_module:
+.. _nikitamishagin.eltex_mes.mes_user_module:
 
 
 *********************************
-nikitamishagin.eltex_mes.ios_user
+nikitamishagin.eltex_mes.mes_user
 *********************************
 
 **Module to manage the aggregates of local users.**
@@ -516,14 +516,14 @@ Examples
     # Before state:
     # -------------
 
-    # router-ios#show running-config | section ^username
+    # router-mes#show running-config | section ^username
     # username testuser privilege 15 password 0 password
 
     # Present state create a new user play:
     # -------------------------------------
 
     - name: Create a new user
-      cisco.ios.ios_user:
+      nikitamishagin.eltex_mes.mes_user:
         name: ansible
         nopassword: true
         sshkey: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
@@ -543,7 +543,7 @@ Examples
     # After state:
     # ------------
 
-    # router-ios#show running-config | section username
+    # router-mes#show running-config | section username
     # username testuser privilege 15 password 0 password
     # username ansible nopassword
     #   username ansible
@@ -554,14 +554,14 @@ Examples
     # Before state:
     # -------------
 
-    # router-ios#show running-config | section ^username
+    # router-mes#show running-config | section ^username
     # username testuser privilege 15 password 0 password
 
     # Present state create a new user with multiple keys play:
     # --------------------------------------------------------
 
     - name: Create a new user with multiple keys
-      cisco.ios.ios_user:
+      nikitamishagin.eltex_mes.mes_user:
         name: ansible
         sshkey:
           - "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
@@ -582,7 +582,7 @@ Examples
     # After state:
     # ------------
 
-    # router-ios#show running-config | section username
+    # router-mes#show running-config | section username
     # username testuser privilege 15 password 0 password
     #   username ansible
     #    key-hash ssh-rsa 2ABB27BBC33ED53EF7D55037952ABB27 test@fedora
@@ -593,7 +593,7 @@ Examples
     # Before state:
     # -------------
 
-    # router-ios#show running-config | section ^username
+    # router-mes#show running-config | section ^username
     # username admin privilege 15 password 0 password
     # username testuser privilege 15 password 0 password
     # username ansible nopassword
@@ -604,7 +604,7 @@ Examples
     # ----------------------------------
 
     - name: Remove all users except admin
-      cisco.ios.ios_user:
+      nikitamishagin.eltex_mes.mes_user:
         purge: true
 
     # Task Output
@@ -620,7 +620,7 @@ Examples
     # After state:
     # ------------
 
-    # router-ios#show running-config | section username
+    # router-mes#show running-config | section username
     # username admin privilege 15 password 0 password
 
     # Using Purge: true
@@ -628,7 +628,7 @@ Examples
     # Before state:
     # -------------
 
-    # router-ios#show running-config | section ^username
+    # router-mes#show running-config | section ^username
     # username admin privilege 15 password 0 password
     # username testuser privilege 15 password 0 password1
     # username testuser1 privilege 15 password 0 password2
@@ -638,7 +638,7 @@ Examples
     # ---------------------------------------------------------
 
     - name: Remove all users except admin and these listed users
-      cisco.ios.ios_user:
+      nikitamishagin.eltex_mes.mes_user:
         aggregate:
           - name: testuser
           - name: testuser1
@@ -653,7 +653,7 @@ Examples
     # After state:
     # ------------
 
-    # router-ios#show running-config | section username
+    # router-mes#show running-config | section username
     # username admin privilege 15 password 0 password
     # username testuser privilege 15 password 0 password1
     # username testuser1 privilege 15 password 0 password2
@@ -663,7 +663,7 @@ Examples
     # Before state:
     # -------------
 
-    # router-ios#show running-config | section ^username
+    # router-mes#show running-config | section ^username
     # username admin privilege 15 password 0 password
     # username netop password 0 password1
     # username netend password 0 password2
@@ -672,7 +672,7 @@ Examples
     # ------------------------------------------------------------
 
     - name: Set multiple users to privilege level 15
-      cisco.ios.ios_user:
+      nikitamishagin.eltex_mes.mes_user:
         aggregate:
           - name: netop
           - name: netend
@@ -689,7 +689,7 @@ Examples
     # After state:
     # ------------
 
-    # router-ios#show running-config | section username
+    # router-mes#show running-config | section username
     # username admin privilege 15 password 0 password
     # username netop privilege 15 password 0 password1
     # username netend privilege 15 password 0 password2
@@ -699,7 +699,7 @@ Examples
     # Before state:
     # -------------
 
-    # router-ios#show running-config | section ^username
+    # router-mes#show running-config | section ^username
     # username admin privilege 15 password 0 password
     # username netop privilege 15 password 0 oldpassword
 
@@ -707,7 +707,7 @@ Examples
     # --------------------------------------------
 
     - name: Change Password for User netop
-      cisco.ios.ios_user:
+      nikitamishagin.eltex_mes.mes_user:
         name: netop
         configured_password: "newpassword"
         password_type: password
@@ -723,7 +723,7 @@ Examples
     # After state:
     # ------------
 
-    # router-ios#show running-config | section username
+    # router-mes#show running-config | section username
     # username admin privilege 15 password 0 password
     # username netop privilege 15 password 0 newpassword
 
@@ -732,7 +732,7 @@ Examples
     # Before state:
     # -------------
 
-    # router-ios#show running-config | section ^username
+    # router-mes#show running-config | section ^username
     # username admin privilege 15 password 0 password
     # username netop privilege 15 password 0 password
     # username netend privilege 15 password 0 password
@@ -741,7 +741,7 @@ Examples
     # --------------------------------------------
 
     - name: Set user view/role for users
-      cisco.ios.ios_user:
+      nikitamishagin.eltex_mes.mes_user:
         aggregate:
           - name: netop
           - name: netend
@@ -758,7 +758,7 @@ Examples
     # After state:
     # ------------
 
-    # router-ios#show running-config | section username
+    # router-mes#show running-config | section username
     # username admin privilege 15 password 0 password
     # username netop privilege 15 view network-admin password 0 password
     # username netend privilege 15 view network-admin password 0 password
@@ -768,14 +768,14 @@ Examples
     # Before state:
     # -------------
 
-    # router-ios#show running-config | section ^username
+    # router-mes#show running-config | section ^username
     # username admin privilege 15 password 0 password
 
     # Present state create a new user with hashed password play:
     # --------------------------------------------------------------
 
     - name: Create a new user with hashed password
-      cisco.ios.ios_user:
+      nikitamishagin.eltex_mes.mes_user:
         name: ansibletest5
         hashed_password:
           type: 9
@@ -791,7 +791,7 @@ Examples
     # After state:
     # ------------
 
-    # router-ios#show running-config | section username
+    # router-mes#show running-config | section username
     # username admin privilege 15 password 0 password
     # username ansibletest5 secret 9 thiswillbereplacedwithhashedpassword
 
@@ -800,7 +800,7 @@ Examples
     # Before state:
     # -------------
 
-    # router-ios#show running-config | section ^username
+    # router-mes#show running-config | section ^username
     # username admin privilege 15 password 0 password
     # username ansibletest1 password 0 password
     # username ansibletest2 secret 9 thiswillbereplacedwithhashedpassword
@@ -810,7 +810,7 @@ Examples
     # ----------------------------------------
 
     - name: Delete users with aggregate
-      cisco.ios.ios_user:
+      nikitamishagin.eltex_mes.mes_user:
         aggregate:
           - name: ansibletest1
           - name: ansibletest2
@@ -828,7 +828,7 @@ Examples
     # After state:
     # ------------
 
-    # router-ios#show running-config | section username
+    # router-mes#show running-config | section username
     # username admin privilege 15 password 0 password
 
 

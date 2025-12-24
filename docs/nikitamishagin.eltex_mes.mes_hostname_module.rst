@@ -1,8 +1,8 @@
-.. _nikitamishagin.eltex_mes.ios_hostname_module:
+.. _nikitamishagin.eltex_mes.mes_hostname_module:
 
 
 *************************************
-nikitamishagin.eltex_mes.ios_hostname
+nikitamishagin.eltex_mes.mes_hostname
 *************************************
 
 **Resource module to configure hostname.**
@@ -134,14 +134,14 @@ Examples
     # Before state:
     # -------------
 
-    # router-ios#show running-config | section ^hostname
+    # router-mes#show running-config | section ^hostname
     # hostname Router
 
     # Merged play:
     # ------------
 
     - name: Apply the provided configuration
-      cisco.ios.ios_hostname:
+      nikitamishagin.eltex_mes.mes_hostname:
         config:
           hostname: Router1
         state: merged
@@ -156,7 +156,7 @@ Examples
     # After state:
     # ------------
 
-    # router-ios#show running-config | section ^hostname
+    # router-mes#show running-config | section ^hostname
     # hostname Router1
 
     # Using state: deleted
@@ -164,14 +164,14 @@ Examples
     # Before state:
     # -------------
 
-    # router-ios#show running-config | section ^hostname
+    # router-mes#show running-config | section ^hostname
     # hostname RouterTest
 
     # Deleted play:
     # -------------
 
     - name: Remove all existing configuration
-      cisco.ios.ios_hostname:
+      nikitamishagin.eltex_mes.mes_hostname:
         state: deleted
 
     # Commands Fired:
@@ -184,7 +184,7 @@ Examples
     # After state:
     # ------------
 
-    # router-ios#show running-config | section ^hostname
+    # router-mes#show running-config | section ^hostname
     # hostname Router
 
     # Using state: overridden
@@ -192,14 +192,14 @@ Examples
     # Before state:
     # -------------
 
-    # router-ios#show running-config | section ^hostname
+    # router-mes#show running-config | section ^hostname
     # hostname Router
 
     # Overridden play:
     # ----------------
 
     - name: Override commands with provided configuration
-      cisco.ios.ios_hostname:
+      nikitamishagin.eltex_mes.mes_hostname:
         config:
           hostname: RouterTest
         state: overridden
@@ -213,7 +213,7 @@ Examples
     # After state:
     # ------------
 
-    # router-ios#show running-config | section ^hostname
+    # router-mes#show running-config | section ^hostname
     # hostname RouterTest
 
     # Using state: replaced
@@ -221,14 +221,14 @@ Examples
     # Before state:
     # -------------
 
-    # router-ios#show running-config | section ^hostname
+    # router-mes#show running-config | section ^hostname
     # hostname RouterTest
 
     # Replaced play:
     # --------------
 
     - name: Replace commands with provided configuration
-      cisco.ios.ios_hostname:
+      nikitamishagin.eltex_mes.mes_hostname:
         config:
           hostname: RouterTest
         state: replaced
@@ -241,7 +241,7 @@ Examples
     # After state:
     # ------------
 
-    # router-ios#show running-config | section ^hostname
+    # router-mes#show running-config | section ^hostname
     # hostname RouterTest
 
     # Using state: gathered
@@ -249,14 +249,14 @@ Examples
     # Before state:
     # -------------
 
-    # router-ios#show running-config | section ^hostname
+    # router-mes#show running-config | section ^hostname
     # hostname RouterTest
 
     # Gathered play:
     # --------------
 
     - name: Gather listed hostname config
-      cisco.ios.ios_hostname:
+      nikitamishagin.eltex_mes.mes_hostname:
         state: gathered
 
     # Module Execution Result:
@@ -272,7 +272,7 @@ Examples
     # --------------
 
     - name: Render the commands for provided configuration
-      cisco.ios.ios_hostname:
+      nikitamishagin.eltex_mes.mes_hostname:
         config:
           hostname: RouterTest
         state: rendered
@@ -295,7 +295,7 @@ Examples
     # ------------
 
     - name: Parse the provided configuration with the existing running configuration
-      cisco.ios.ios_hostname:
+      nikitamishagin.eltex_mes.mes_hostname:
         running_config: "{{ lookup('file', 'parsed.cfg') }}"
         state: parsed
 

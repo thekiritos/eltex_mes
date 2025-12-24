@@ -1,8 +1,8 @@
-.. _nikitamishagin.eltex_mes.ios_evpn_evi_module:
+.. _nikitamishagin.eltex_mes.mes_evpn_evi_module:
 
 
 *************************************
-nikitamishagin.eltex_mes.ios_evpn_evi
+nikitamishagin.eltex_mes.mes_evpn_evi
 *************************************
 
 **Resource module to configure L2VPN EVPN EVI.**
@@ -360,7 +360,7 @@ Examples
     #  replication-type ingress
 
     # - name: Merge provided configuration with device configuration
-    #   cisco.ios.ios_evpn_evi:
+    #   nikitamishagin.eltex_mes.mes_evpn_evi:
     #     config:
     #       - evi: 101
     #         replication_type: ingress
@@ -443,7 +443,7 @@ Examples
     #  default-gateway advertise enable
 
     # - name: Replaces the device configuration with the provided configuration
-    #   cisco.ios.ios_evpn_evi:
+    #   nikitamishagin.eltex_mes.mes_evpn_evi:
     #     config:
     #       - evi: 101
     #         replication_type: ingress
@@ -508,7 +508,7 @@ Examples
     #  replication-type ingress
 
     # - name: Override the device configuration with provided configuration
-    #   cisco.ios.ios_evpn_evi:
+    #   nikitamishagin.eltex_mes.mes_evpn_evi:
     #     config:
     #       - evi: 101
     #         replication_type: ingress
@@ -562,7 +562,7 @@ Examples
     #  default-gateway advertise enable
 
     # - name: "Delete the given EVI(s)"
-    #   cisco.ios.ios_evpn_evi:
+    #   nikitamishagin.eltex_mes.mes_evpn_evi:
     #     config:
     #       - evi: 101
     #     state: deleted
@@ -596,7 +596,7 @@ Examples
     #  default-gateway advertise enable
 
     # - name: "Delete ALL EVIs"
-    #   cisco.ios.ios_evpn_evi:
+    #   nikitamishagin.eltex_mes.mes_evpn_evi:
     #     state: deleted
 
     # Commands Fired:
@@ -632,7 +632,7 @@ Examples
     #  replication-type ingress
 
     # - name: Gather facts for evpn_evi
-    #   cisco.ios.ios_evpn_evi:
+    #   nikitamishagin.eltex_mes.mes_evpn_evi:
     #     config:
     #     state: gathered
 
@@ -656,7 +656,7 @@ Examples
     # Using Rendered
 
     # - name: Rendered the provided configuration with the existing running configuration
-    #   cisco.ios.ios_evpn_evi:
+    #   nikitamishagin.eltex_mes.mes_evpn_evi:
     #     config:
     #       - evi: 101
     #         replication_type: ingress
@@ -694,7 +694,7 @@ Examples
     # !
 
     # - name: Parse the commands for provided configuration
-    #   cisco.ios.ios_evpn_evi:
+    #   nikitamishagin.eltex_mes.mes_evpn_evi:
     #     running_config: "{{ lookup('file', 'parsed.cfg') }}"
     #     state: parsed
 

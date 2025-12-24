@@ -1,8 +1,8 @@
-.. _nikitamishagin.eltex_mes.ios_ospf_interfaces_module:
+.. _nikitamishagin.eltex_mes.mes_ospf_interfaces_module:
 
 
 ********************************************
-nikitamishagin.eltex_mes.ios_ospf_interfaces
+nikitamishagin.eltex_mes.mes_ospf_interfaces
 ********************************************
 
 **Resource module to configure OSPF interfaces.**
@@ -1509,7 +1509,7 @@ Examples
     # Before state:
     # -------------
     #
-    # router-ios#sh running-config | section ^interface
+    # router-mes#sh running-config | section ^interface
     # interface GigabitEthernet0/0
     # interface GigabitEthernet0/1
     #  ipv6 ospf 55 area 105
@@ -1524,7 +1524,7 @@ Examples
     #  ip ospf cost 30
 
     - name: Delete provided OSPF Interface config
-      cisco.ios.ios_ospf_interfaces:
+      nikitamishagin.eltex_mes.mes_ospf_interfaces:
         config:
           - name: GigabitEthernet0/1
         state: deleted
@@ -1583,7 +1583,7 @@ Examples
     #
     # After state:
     # ------------
-    # router-ios#sh running-config | section ^interface
+    # router-mes#sh running-config | section ^interface
     # interface GigabitEthernet0/0
     # interface GigabitEthernet0/1
     # interface GigabitEthernet0/2
@@ -1598,7 +1598,7 @@ Examples
     # Before state:
     # -------------
     #
-    # router-ios#sh running-config | section ^interface
+    # router-mes#sh running-config | section ^interface
     # interface GigabitEthernet0/0
     # interface GigabitEthernet0/1
     #  ipv6 ospf 55 area 105
@@ -1613,7 +1613,7 @@ Examples
     #  ip ospf cost 30
 
     - name: Delete all OSPF config from interfaces
-      cisco.ios.ios_ospf_interfaces:
+      nikitamishagin.eltex_mes.mes_ospf_interfaces:
         state: deleted
 
     # Task Output:
@@ -1664,7 +1664,7 @@ Examples
 
     # After state:
     # -------------
-    # router-ios#sh running-config | section ^interface
+    # router-mes#sh running-config | section ^interface
     # interface GigabitEthernet0/0
     # interface GigabitEthernet0/1
     # interface GigabitEthernet0/2
@@ -1674,11 +1674,11 @@ Examples
     # Before state:
     # -------------
     #
-    # router-ios#sh running-config | section ^interface
-    # router-ios#
+    # router-mes#sh running-config | section ^interface
+    # router-mes#
 
     - name: Merge provided OSPF Interfaces configuration
-      cisco.ios.ios_ospf_interfaces:
+      nikitamishagin.eltex_mes.mes_ospf_interfaces:
         config:
           - name: GigabitEthernet0/1
             address_family:
@@ -1779,7 +1779,7 @@ Examples
     # After state:
     # -------------
     #
-    # router-ios#sh running-config | section ^interface
+    # router-mes#sh running-config | section ^interface
     # interface GigabitEthernet0/0
     # interface GigabitEthernet0/1
     #  ip ospf network broadcast
@@ -1806,7 +1806,7 @@ Examples
     # Before state:
     # -------------
     #
-    # router-ios#sh running-config | section ^interface
+    # router-mes#sh running-config | section ^interface
     # interface GigabitEthernet0/0
     # interface GigabitEthernet0/1
     #  ip ospf network broadcast
@@ -1829,7 +1829,7 @@ Examples
     # interface GigabitEthernet0/2
 
     - name: Override running config with provided OSPF Interfaces configuration
-      cisco.ios.ios_ospf_interfaces:
+      nikitamishagin.eltex_mes.mes_ospf_interfaces:
         config:
           - name: GigabitEthernet0/1
             address_family:
@@ -1948,7 +1948,7 @@ Examples
     # After state:
     # -------------
     #
-    # router-ios#sh running-config | section ^interface
+    # router-mes#sh running-config | section ^interface
     # interface GigabitEthernet0/0
     # interface GigabitEthernet0/1
     #  ipv6 ospf 55 area 105
@@ -1967,7 +1967,7 @@ Examples
     # Before state:
     # -------------
     #
-    # router-ios#sh running-config | section ^interface
+    # router-mes#sh running-config | section ^interface
     # interface GigabitEthernet0/0
     # interface GigabitEthernet0/1
     #  ip ospf network broadcast
@@ -1990,7 +1990,7 @@ Examples
     # interface GigabitEthernet0/2
 
     - name: Replaced provided OSPF Interfaces configuration
-      cisco.ios.ios_ospf_interfaces:
+      nikitamishagin.eltex_mes.mes_ospf_interfaces:
         config:
           - name: GigabitEthernet0/2
             address_family:
@@ -2099,7 +2099,7 @@ Examples
 
     # After state:
     # ------------
-    # router-ios#sh running-config | section ^interface
+    # router-mes#sh running-config | section ^interface
     # interface GigabitEthernet0/0
     # interface GigabitEthernet0/1
     #  ip ospf network broadcast
@@ -2130,7 +2130,7 @@ Examples
     # Before state:
     # -------------
     #
-    # router-ios#sh running-config | section ^interface
+    # router-mes#sh running-config | section ^interface
     # interface GigabitEthernet0/0
     # interface GigabitEthernet0/1
     #  ip ospf network broadcast
@@ -2153,7 +2153,7 @@ Examples
     # interface GigabitEthernet0/2
 
     - name: Gather OSPF Interfaces provided configurations
-      cisco.ios.ios_ospf_interfaces:
+      nikitamishagin.eltex_mes.mes_ospf_interfaces:
         config:
         state: gathered
 
@@ -2201,7 +2201,7 @@ Examples
     # After state:
     # ------------
     #
-    # router-ios#sh running-config | section ^interface
+    # router-mes#sh running-config | section ^interface
     # interface GigabitEthernet0/0
     # interface GigabitEthernet0/1
     #  ip ospf network broadcast
@@ -2226,7 +2226,7 @@ Examples
     # Using Rendered
 
     - name: Render the commands for provided  configuration
-      cisco.ios.ios_ospf_interfaces:
+      nikitamishagin.eltex_mes.mes_ospf_interfaces:
         config:
           - name: GigabitEthernet0/1
             address_family:
@@ -2313,7 +2313,7 @@ Examples
     # interface GigabitEthernet0/0
 
     - name: Parse the provided configuration with the existing running configuration
-      cisco.ios.ios_ospf_interfaces:
+      nikitamishagin.eltex_mes.mes_ospf_interfaces:
         running_config: "{{ lookup('file', 'parsed.cfg') }}"
         state: parsed
 

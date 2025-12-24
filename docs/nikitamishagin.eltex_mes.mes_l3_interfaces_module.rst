@@ -1,8 +1,8 @@
-.. _nikitamishagin.eltex_mes.ios_l3_interfaces_module:
+.. _nikitamishagin.eltex_mes.mes_l3_interfaces_module:
 
 
 ******************************************
-nikitamishagin.eltex_mes.ios_l3_interfaces
+nikitamishagin.eltex_mes.mes_l3_interfaces
 ******************************************
 
 **Resource module to configure L3 interfaces.**
@@ -987,7 +987,7 @@ Examples
     #  negotiation auto
 
     - name: Merge provided configuration with device configuration
-      cisco.ios.ios_l3_interfaces:
+      nikitamishagin.eltex_mes.mes_l3_interfaces:
         config:
           - name: GigabitEthernet0/1
             ipv4:
@@ -1141,7 +1141,7 @@ Examples
     #  negotiation auto
 
     - name: Replaces device configuration of listed interfaces with provided configuration
-      cisco.ios.ios_l3_interfaces:
+      nikitamishagin.eltex_mes.mes_l3_interfaces:
         config:
           - name: GigabitEthernet2
             helper_addresses:
@@ -1212,7 +1212,7 @@ Examples
     # After state:
     # ------------
     #
-    # router-ios#show running-config | section ^interface
+    # router-mes#show running-config | section ^interface
     # interface Loopback999
     #  no ip address
     #  shutdown
@@ -1242,7 +1242,7 @@ Examples
     # Before state:
     # -------------
     #
-    # router-ios#show running-config | section ^interface
+    # router-mes#show running-config | section ^interface
     # interface Loopback999
     #  no ip address
     #  shutdown
@@ -1268,7 +1268,7 @@ Examples
     #  negotiation auto
 
     - name: Override device configuration of all interfaces with provided configuration
-      cisco.ios.ios_l3_interfaces:
+      nikitamishagin.eltex_mes.mes_l3_interfaces:
         config:
           - ipv4:
               - dhcp:
@@ -1321,7 +1321,7 @@ Examples
     # After state:
     # ------------
     #
-    # router-ios#show running-config | section ^interface
+    # router-mes#show running-config | section ^interface
     # interface Loopback999
     #  no ip address
     #  shutdown
@@ -1351,7 +1351,7 @@ Examples
     # Before state:
     # -------------
     #
-    # router-ios#show running-config | section ^interface
+    # router-mes#show running-config | section ^interface
     # interface Loopback999
     #  no ip address
     #  shutdown
@@ -1377,7 +1377,7 @@ Examples
     #  negotiation auto
 
     - name: "Delete attributes of given interfaces (NOTE: This won't delete the interfaces)"
-      cisco.ios.ios_l3_interfaces:
+      nikitamishagin.eltex_mes.mes_l3_interfaces:
         config:
           - name: GigabitEthernet2
           - name: GigabitEthernet3.100
@@ -1415,7 +1415,7 @@ Examples
     # After state:
     # -------------
     #
-    # router-ios#show running-config | section ^interface
+    # router-mes#show running-config | section ^interface
     # interface Loopback999
     #  no ip address
     #  shutdown
@@ -1445,7 +1445,7 @@ Examples
     # Before state:
     # -------------
 
-    # router-ios#show running-config | section ^interface
+    # router-mes#show running-config | section ^interface
     # interface Loopback999
     #  no ip address
     #  shutdown
@@ -1472,7 +1472,7 @@ Examples
     #  negotiation auto
 
     - name: "Delete L3 config of all interfaces"
-      cisco.ios.ios_l3_interfaces:
+      nikitamishagin.eltex_mes.mes_l3_interfaces:
         state: deleted
 
     # Task Output
@@ -1563,7 +1563,7 @@ Examples
     #  negotiation auto
 
     - name: Gather facts for l3 interfaces
-      cisco.ios.ios_l3_interfaces:
+      nikitamishagin.eltex_mes.mes_l3_interfaces:
         state: gathered
 
     # Task Output
@@ -1590,7 +1590,7 @@ Examples
     # Using rendered
 
     - name: Render the commands for provided configuration
-      cisco.ios.ios_l3_interfaces:
+      nikitamishagin.eltex_mes.mes_l3_interfaces:
         config:
           - name: GigabitEthernet1
             ipv4:
@@ -1630,7 +1630,7 @@ Examples
     #  ipv6 address 2001:db8:0:3::/64
 
     - name: Parse the provided configuration
-      cisco.ios.ios_l3_interfaces:
+      nikitamishagin.eltex_mes.mes_l3_interfaces:
         running_config: "{{ lookup('file', 'parsed.cfg') }}"
         state: parsed
 

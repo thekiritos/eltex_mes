@@ -1,8 +1,8 @@
-.. _nikitamishagin.eltex_mes.ios_ntp_global_module:
+.. _nikitamishagin.eltex_mes.mes_ntp_global_module:
 
 
 ***************************************
-nikitamishagin.eltex_mes.ios_ntp_global
+nikitamishagin.eltex_mes.mes_ntp_global
 ***************************************
 
 **Resource module to configure NTP.**
@@ -1554,14 +1554,14 @@ Examples
     # Before state:
     # -------------
 
-    # router-ios#show running-config | section ^ntp
+    # router-mes#show running-config | section ^ntp
     # --------------------- EMPTY -----------------
 
     # Merged play:
     # ------------
 
     - name: Apply the provided configuration
-      cisco.ios.ios_ntp_global:
+      nikitamishagin.eltex_mes.mes_ntp_global:
         config:
           access_group:
             peer:
@@ -1662,7 +1662,7 @@ Examples
     # After state:
     # ------------
 
-    # router-ios#show running-config | section ^ntp
+    # router-mes#show running-config | section ^ntp
     # ntp max-associations 34
     # ntp logging
     # ntp allow mode control 4
@@ -1693,7 +1693,7 @@ Examples
     # Before state:
     # -------------
 
-    # router-ios#show running-config | section ^ntp
+    # router-mes#show running-config | section ^ntp
     # ntp max-associations 34
     # ntp logging
     # ntp allow mode control 4
@@ -1723,7 +1723,7 @@ Examples
     # -------------
 
     - name: Remove all existing configuration
-      cisco.ios.ios_ntp_global:
+      nikitamishagin.eltex_mes.mes_ntp_global:
         state: deleted
 
     # Commands Fired:
@@ -1759,7 +1759,7 @@ Examples
     # After state:
     # ------------
 
-    # router-ios#show running-config | section ^ntp
+    # router-mes#show running-config | section ^ntp
     # --------------------- EMPTY -----------------
 
     # Using state: overridden
@@ -1767,7 +1767,7 @@ Examples
     # Before state:
     # -------------
 
-    # router-ios#show running-config | section ^ntp
+    # router-mes#show running-config | section ^ntp
     # ntp panic update
     # ntp authentication-key 2 md5 00371C0B01680E051A33497E080A16001D1908 7
     # ntp authenticate
@@ -1783,7 +1783,7 @@ Examples
     # ----------------
 
     - name: Override commands with provided configuration
-      cisco.ios.ios_ntp_global:
+      nikitamishagin.eltex_mes.mes_ntp_global:
         config:
           peers:
             - peer: ipv6DomainNew.com
@@ -1818,7 +1818,7 @@ Examples
     # After state:
     # ------------
 
-    # router-ios#show running-config | section ^ntp
+    # router-mes#show running-config | section ^ntp
     # ntp access-group ipv6 peer DHCP-Server
     # ntp peer ipv6 ipv6DomainNew.com
     # ntp peer 172.16.1.100 prefer
@@ -1828,7 +1828,7 @@ Examples
     # Before state:
     # -------------
 
-    # router-ios#show running-config | section ^ntp
+    # router-mes#show running-config | section ^ntp
     # ntp access-group ipv6 peer DHCP-Server
     # ntp peer ipv6 ipv6DomainNew.com
     # ntp peer 172.16.1.100 prefer
@@ -1837,7 +1837,7 @@ Examples
     # --------------
 
     - name: Replace commands with provided configuration
-      cisco.ios.ios_ntp_global:
+      nikitamishagin.eltex_mes.mes_ntp_global:
         config:
           broadcast_delay: 22
           clock_period: 5
@@ -1870,7 +1870,7 @@ Examples
     # After state:
     # ------------
 
-    # router-ios#show running-config | section ^ntp
+    # router-mes#show running-config | section ^ntp
     # ntp max-associations 34
     # ntp logging
     # ntp orphan 4
@@ -1884,7 +1884,7 @@ Examples
     # Before state:
     # -------------
 
-    # router-ios#show running-config | section ^ntp
+    # router-mes#show running-config | section ^ntp
     # ntp max-associations 34
     # ntp logging
     # ntp allow mode control 4
@@ -1915,7 +1915,7 @@ Examples
     # --------------
 
     - name: Gather listed ntp config
-      cisco.ios.ios_ntp_global:
+      nikitamishagin.eltex_mes.mes_ntp_global:
         state: gathered
 
     # Module Execution Result:
@@ -2016,7 +2016,7 @@ Examples
     # After state:
     # -------------
 
-    # router-ios#show running-config | section ^ntp
+    # router-mes#show running-config | section ^ntp
     # ntp max-associations 34
     # ntp logging
     # ntp allow mode control 4
@@ -2049,7 +2049,7 @@ Examples
     # --------------
 
     - name: Render the commands for provided configuration
-      cisco.ios.ios_ntp_global:
+      nikitamishagin.eltex_mes.mes_ntp_global:
         config:
           access_group:
             peer:
@@ -2188,7 +2188,7 @@ Examples
     # ------------
 
     - name: Parse the provided configuration with the existing running configuration
-      cisco.ios.ios_ntp_global:
+      nikitamishagin.eltex_mes.mes_ntp_global:
         running_config: "{{ lookup('file', 'parsed.cfg') }}"
         state: parsed
 

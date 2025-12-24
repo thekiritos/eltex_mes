@@ -1,8 +1,8 @@
-.. _nikitamishagin.eltex_mes.ios_banner_module:
+.. _nikitamishagin.eltex_mes.mes_banner_module:
 
 
 ***********************************
-nikitamishagin.eltex_mes.ios_banner
+nikitamishagin.eltex_mes.mes_banner
 ***********************************
 
 **Module to configure multiline banners.**
@@ -125,7 +125,7 @@ Examples
 .. code-block:: yaml
 
     - name: Configure the login banner
-      cisco.ios.ios_banner:
+      nikitamishagin.eltex_mes.mes_banner:
         banner: login
         text: |
           this is my login banner
@@ -134,18 +134,18 @@ Examples
         state: present
 
     - name: Remove the motd banner
-      cisco.ios.ios_banner:
+      nikitamishagin.eltex_mes.mes_banner:
         banner: motd
         state: absent
 
     - name: Configure banner from file
-      cisco.ios.ios_banner:
+      nikitamishagin.eltex_mes.mes_banner:
         banner: motd
         text: "{{ lookup('file', './config_partial/raw_banner.cfg') }}"  # Use unix formatted text files (LF not CRLF) to avoid idempotency issues.
         state: present
 
     - name: Configure the login banner using delimiter
-      cisco.ios.ios_banner:
+      nikitamishagin.eltex_mes.mes_banner:
         banner: login
         multiline_delimiter: x
         text: this is my login banner

@@ -1,8 +1,8 @@
-.. _nikitamishagin.eltex_mes.ios_bgp_global_module:
+.. _nikitamishagin.eltex_mes.mes_bgp_global_module:
 
 
 ***************************************
-nikitamishagin.eltex_mes.ios_bgp_global
+nikitamishagin.eltex_mes.mes_bgp_global
 ***************************************
 
 **Resource module to configure BGP.**
@@ -8541,7 +8541,7 @@ Examples
     # vios#sh running-config | section ^router bgp
 
     - name: Merge provided configuration with device configuration
-      cisco.ios.ios_bgp_global:
+      nikitamishagin.eltex_mes.mes_bgp_global:
         config:
           as_number: 65000
           bgp:
@@ -8702,7 +8702,7 @@ Examples
     #  neighbor 198.0.2.1 route-map test-route out
 
     - name: Replaces device configuration of listed global BGP with provided configuration
-      cisco.ios.ios_bgp_global:
+      nikitamishagin.eltex_mes.mes_bgp_global:
         config:
           as_number: 65000
           bgp:
@@ -8841,7 +8841,7 @@ Examples
     #  neighbor 192.0.2.1 route-map test-route out
 
     - name: "Delete global BGP (Note: This won't delete the configured global BGP)"
-      cisco.ios.ios_bgp_global:
+      nikitamishagin.eltex_mes.mes_bgp_global:
         config:
           as_number: 65000
         state: deleted
@@ -8922,7 +8922,7 @@ Examples
     #  neighbor 192.0.2.1 route-map test-route out
 
     - name: Delete global BGP without config
-      cisco.ios.ios_bgp_global:
+      nikitamishagin.eltex_mes.mes_bgp_global:
         state: deleted
 
     # Task Output:
@@ -9002,7 +9002,7 @@ Examples
     - name:
         "Delete the configured global BGP (Note: This WILL delete the the configured
         global BGP)"
-      cisco.ios.ios_bgp_global:
+      nikitamishagin.eltex_mes.mes_bgp_global:
         state: purged
 
     # Task Output:
@@ -9076,7 +9076,7 @@ Examples
     #  neighbor 192.0.2.1 route-map test-route out
 
     - name: Gather facts for bgp_global
-      cisco.ios.ios_bgp_global:
+      nikitamishagin.eltex_mes.mes_bgp_global:
         config:
         state: gathered
 
@@ -9134,7 +9134,7 @@ Examples
     # Using Rendered
 
     - name: Rendered the provided configuration with the existing running configuration
-      cisco.ios.ios_bgp_global:
+      nikitamishagin.eltex_mes.mes_bgp_global:
         config:
           aggregate_addresses:
             - address: 192.0.2.1
@@ -9497,7 +9497,7 @@ Examples
     #  redistribute mobile metric 21
 
     - name: Parse the commands for provided configuration
-      cisco.ios.ios_bgp_global:
+      nikitamishagin.eltex_mes.mes_bgp_global:
         running_config: "{{ lookup('file', 'parsed.cfg') }}"
         state: parsed
 

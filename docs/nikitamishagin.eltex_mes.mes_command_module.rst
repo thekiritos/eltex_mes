@@ -1,8 +1,8 @@
-.. _nikitamishagin.eltex_mes.ios_command_module:
+.. _nikitamishagin.eltex_mes.mes_command_module:
 
 
 ************************************
-nikitamishagin.eltex_mes.ios_command
+nikitamishagin.eltex_mes.mes_command
 ************************************
 
 **Module to run commands on remote devices.**
@@ -138,7 +138,7 @@ Examples
 .. code-block:: yaml
 
     - name: Run show version on remote devices
-      cisco.ios.ios_command:
+      nikitamishagin.eltex_mes.mes_command:
         commands: show version
 
     # output-
@@ -170,7 +170,7 @@ Examples
     # }
 
     - name: Run show version and check to see if output contains IOS
-      cisco.ios.ios_command:
+      nikitamishagin.eltex_mes.mes_command:
         commands: show version
         wait_for: result[0] contains IOS
 
@@ -205,7 +205,7 @@ Examples
     # }
 
     - name: Run multiple commands on remote nodes
-      cisco.ios.ios_command:
+      nikitamishagin.eltex_mes.mes_command:
         commands:
           - show version
           - show interfaces
@@ -266,7 +266,7 @@ Examples
     # }
 
     - name: Run multiple commands and evaluate the output
-      cisco.ios.ios_command:
+      nikitamishagin.eltex_mes.mes_command:
         commands:
           - show version
           - show interfaces
@@ -301,7 +301,7 @@ Examples
     # }
 
     - name: Run commands that require answering a prompt
-      cisco.ios.ios_command:
+      nikitamishagin.eltex_mes.mes_command:
         commands:
           - command: "clear counters GigabitEthernet2"
             prompt: 'Clear "show interface" counters on this interface \[confirm\]'
@@ -357,7 +357,7 @@ Examples
     # }
 
     - name: Run commands with complex values like special characters in variables
-      cisco.ios.ios_command:
+      nikitamishagin.eltex_mes.mes_command:
         commands:
           ["{{ 'test aaa group TEST ' ~ user ~ ' ' ~ password ~ ' new-code' }}"]
       vars:

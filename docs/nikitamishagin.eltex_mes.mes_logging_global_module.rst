@@ -1,8 +1,8 @@
-.. _nikitamishagin.eltex_mes.ios_logging_global_module:
+.. _nikitamishagin.eltex_mes.mes_logging_global_module:
 
 
 *******************************************
-nikitamishagin.eltex_mes.ios_logging_global
+nikitamishagin.eltex_mes.mes_logging_global
 *******************************************
 
 **Resource module to configure logging.**
@@ -2191,7 +2191,7 @@ Examples
     # Before state:
     # -------------
 
-    # router-ios#show running-config | section logging
+    # router-mes#show running-config | section logging
     # no logging exception
     # no logging buffered
     # no logging reload
@@ -2202,7 +2202,7 @@ Examples
     # no logging trap
 
     - name: Apply the provided configuration
-      cisco.ios.ios_logging_global:
+      nikitamishagin.eltex_mes.mes_logging_global:
         config:
           buffered:
             severity: notifications
@@ -2265,7 +2265,7 @@ Examples
     # After state:
     # ------------
 
-    # router-ios#show running-config | section logging
+    # router-mes#show running-config | section logging
     # logging exception 4099
     # logging message-counter log
     # logging userinfo
@@ -2291,7 +2291,7 @@ Examples
     # Before state:
     # -------------
 
-    # router-ios#show running-config | section logging
+    # router-mes#show running-config | section logging
     # logging exception 4099
     # logging message-counter log
     # logging userinfo
@@ -2312,7 +2312,7 @@ Examples
     # logging host 172.16.1.10 filtered stream 10
 
     - name: Remove all existing configuration
-      cisco.ios.ios_logging_global:
+      nikitamishagin.eltex_mes.mes_logging_global:
         state: deleted
 
     # Commands Fired:
@@ -2340,7 +2340,7 @@ Examples
     # After state:
     # ------------
 
-    # router-ios#show running-config | section logging
+    # router-mes#show running-config | section logging
     # no logging exception
     # no logging buffered
     # no logging reload
@@ -2355,7 +2355,7 @@ Examples
     # Before state:
     # -------------
 
-    # router-ios#show running-config | section logging
+    # router-mes#show running-config | section logging
     # logging exception 4099
     # logging message-counter log
     # logging userinfo
@@ -2375,7 +2375,7 @@ Examples
     # logging host 172.16.1.25 filtered
 
     - name: Override commands with provided configuration
-      cisco.ios.ios_logging_global:
+      nikitamishagin.eltex_mes.mes_logging_global:
         config:
           hosts:
             - hostname: 172.16.1.27
@@ -2405,7 +2405,7 @@ Examples
     # After state:
     # ------------
 
-    # router-ios#show running-config | section logging
+    # router-mes#show running-config | section logging
     # no logging exception
     # no logging buffered
     # no logging reload
@@ -2421,7 +2421,7 @@ Examples
     # Before state:
     # -------------
 
-    # router-ios#show running-config | section logging
+    # router-mes#show running-config | section logging
     # logging exception 4099
     # logging message-counter log
     # logging userinfo
@@ -2442,7 +2442,7 @@ Examples
     # logging host 172.16.1.10 filtered stream 10
 
     - name: Replace commands with provided configuration
-      cisco.ios.ios_logging_global:
+      nikitamishagin.eltex_mes.mes_logging_global:
         config:
           buffered:
             severity: alerts
@@ -2472,7 +2472,7 @@ Examples
     # After state:
     # ------------
 
-    # router-ios#show running-config | section logging
+    # router-mes#show running-config | section logging
     # logging exception 4099
     # logging message-counter log
     # logging userinfo
@@ -2494,7 +2494,7 @@ Examples
     # Before state:
     # -------------
 
-    # router-ios#show running-config | section logging
+    # router-mes#show running-config | section logging
     # logging exception 4099
     # logging message-counter log
     # logging userinfo
@@ -2516,7 +2516,7 @@ Examples
     # logging host 172.16.1.25 filtered
 
     - name: Gather listed logging config
-      cisco.ios.ios_logging_global:
+      nikitamishagin.eltex_mes.mes_logging_global:
         state: gathered
 
     # Module Execution Result:
@@ -2583,7 +2583,7 @@ Examples
     # After state:
     # -------------
 
-    # router-ios#show running-config | section logging
+    # router-mes#show running-config | section logging
     # logging exception 4099
     # logging message-counter log
     # logging userinfo
@@ -2607,7 +2607,7 @@ Examples
     # Using state: rendered
 
     - name: Render the commands for provided configuration
-      cisco.ios.ios_logging_global:
+      nikitamishagin.eltex_mes.mes_logging_global:
         config:
           buffered:
             severity: notifications
@@ -2703,7 +2703,7 @@ Examples
     # logging filter tftp://172.16.2.14/ESM/escalate.tcl args TESTInst
 
     - name: Parse the provided configuration with the existing running configuration
-      cisco.ios.ios_logging_global:
+      nikitamishagin.eltex_mes.mes_logging_global:
         running_config: "{{ lookup('file', 'parsed.cfg') }}"
         state: parsed
 

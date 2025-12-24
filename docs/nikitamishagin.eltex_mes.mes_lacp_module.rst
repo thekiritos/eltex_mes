@@ -1,8 +1,8 @@
-.. _nikitamishagin.eltex_mes.ios_lacp_module:
+.. _nikitamishagin.eltex_mes.mes_lacp_module:
 
 
 *********************************
-nikitamishagin.eltex_mes.ios_lacp
+nikitamishagin.eltex_mes.mes_lacp
 *********************************
 
 **Resource module to configure LACP.**
@@ -158,7 +158,7 @@ Examples
     # 32768, 5e00.0000.8000
 
     - name: Merge provided configuration with device configuration
-      cisco.ios.ios_lacp:
+      nikitamishagin.eltex_mes.mes_lacp:
         config:
           system:
             priority: 123
@@ -179,7 +179,7 @@ Examples
     # 500, 5e00.0000.8000
 
     - name: Replaces Global LACP configuration
-      cisco.ios.ios_lacp:
+      nikitamishagin.eltex_mes.mes_lacp:
         config:
           system:
             priority: 123
@@ -200,7 +200,7 @@ Examples
     # 500, 5e00.0000.8000
 
     - name: Delete Global LACP attribute
-      cisco.ios.ios_lacp:
+      nikitamishagin.eltex_mes.mes_lacp:
         state: deleted
 
     # After state:
@@ -218,7 +218,7 @@ Examples
     # 123, 5e00.0000.8000
 
     - name: Gather listed LACP with provided configurations
-      cisco.ios.ios_lacp:
+      nikitamishagin.eltex_mes.mes_lacp:
         config:
         state: gathered
 
@@ -240,7 +240,7 @@ Examples
     # Using Rendered
 
     - name: Render the commands for provided  configuration
-      cisco.ios.ios_lacp:
+      nikitamishagin.eltex_mes.mes_lacp:
         config:
           system:
             priority: 123
@@ -261,7 +261,7 @@ Examples
     # lacp system-priority 123
 
     - name: Parse the commands for provided configuration
-      cisco.ios.ios_lacp:
+      nikitamishagin.eltex_mes.mes_lacp:
         running_config: "{{ lookup('file', 'parsed.cfg') }}"
         state: parsed
 

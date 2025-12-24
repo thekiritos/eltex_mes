@@ -1,8 +1,8 @@
-.. _nikitamishagin.eltex_mes.ios_ping_module:
+.. _nikitamishagin.eltex_mes.mes_ping_module:
 
 
 *********************************
-nikitamishagin.eltex_mes.ios_ping
+nikitamishagin.eltex_mes.mes_ping
 *********************************
 
 **Tests reachability using ping from IOS switch.**
@@ -235,35 +235,35 @@ Examples
 .. code-block:: yaml
 
     - name: Test reachability to 198.51.100.251 using default vrf
-      cisco.ios.ios_ping:
+      nikitamishagin.eltex_mes.mes_ping:
         dest: 198.51.100.251
 
     - name: Test reachability to 198.51.100.252 using prod vrf
-      cisco.ios.ios_ping:
+      nikitamishagin.eltex_mes.mes_ping:
         dest: 198.51.100.252
         vrf: prod
         afi: ip
 
     - name: Test un reachability to 198.51.100.253 using default vrf
-      cisco.ios.ios_ping:
+      nikitamishagin.eltex_mes.mes_ping:
         dest: 198.51.100.253
         state: absent
 
     - name: Test reachability to 198.51.100.250 using prod vrf and setting count and source
-      cisco.ios.ios_ping:
+      nikitamishagin.eltex_mes.mes_ping:
         dest: 198.51.100.250
         source: loopback0
         vrf: prod
         count: 20
 
     - name: Test reachability to 198.51.100.249 using df-bit and size
-      cisco.ios.ios_ping:
+      nikitamishagin.eltex_mes.mes_ping:
         dest: 198.51.100.249
         df_bit: true
         size: 1400
 
     - name: Test reachability to ipv6 address
-      cisco.ios.ios_ping:
+      nikitamishagin.eltex_mes.mes_ping:
         dest: 2001:db8:ffff:ffff:ffff:ffff:ffff:ffff
         afi: ipv6
 
