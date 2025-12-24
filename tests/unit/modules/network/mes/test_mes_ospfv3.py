@@ -441,7 +441,7 @@ class TestIosOspfV3Module(TestIosModule):
                                             "strict_lsa_checking": True,
                                         },
                                         "interface_id": {
-                                            "ios_if_index": True,
+                                            "mes_if_index": True,
                                             "snmp_if_index": True,
                                         },
                                         # "limit": {
