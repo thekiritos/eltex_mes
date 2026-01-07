@@ -8,7 +8,7 @@ If you work with Eltex network devices and are familiar with Ansible/Python, I i
 phased adaptation of modules from the cisco.ios collection for Eltex devices. Please propose and implement your
 Eltex-specific adaptations following the roadmap below.
 
-I’m happy to receive any suggestions, ideas, and support for creating this collection. Thank you!
+I'm happy to receive any suggestions, ideas, and support for creating this collection. Thank you!
 
 ⚠️ **If you need a quick way** to make a cisco.ios module work with Eltex devices (just to get it working), check out
 [this section](#old-description-files-in-archive). This is how my project started and how I adapted the module for
@@ -127,21 +127,21 @@ The modules below appear to be the least important. They implement specific and 
 difficult to adapt, and some require a complete rewrite. Furthermore, they are difficult to test at the initial stage of
 a project. Therefore, their adaptation should be done last.
 
-`ios_service` - manages specific functions.
-`ios_evpn_evi`- can be adapted based on documentation, but is challenging and rarely supported on MES.
-`ios_evpn_global` - can be adapted based on documentation, but is challenging and rarely supported on MES.
-`ios_evpn_ethernet`  - can be adapted based on documentation, but is challenging and rarely supported on MES.
-`ios_hsrp_interfaces` - HSRP is not present on many MES; VRRP is often used instead.
-`ios_ospfv2` - OSPF is support depends on model and software version.
-`ios_ospfv3` - OSPF is support depends on model and software version.
-`ios_ospf_interfaces` - OSPF is support depends on model and software version.
-`ios_bgp_global` - BGP is not on all MES; more common on higher-end models (MES5xxx) and certain software versions.
-`ios_bgp_address_family` - BGP is not on all MES; more common on higher-end models.
-`ios_vrf` - VRF is not on all MES; more common on higher-end models.
-`ios_vrf_global` - VRF is not on all MES; more common on higher-end models.
-`ios_vrf_interfaces` - VRF is not on all MES; more common on higher-end models.
-`ios_vrf_address_family` - VRF is not on all MES; more common on higher-end models.
-`ios_vxlan_vtep` - can be adapted based on documentation, but is challenging and rarely supported on MES.
+- `ios_service` - manages specific functions.
+- `ios_evpn_evi`- can be adapted based on documentation, but is challenging and rarely supported on MES.
+- `ios_evpn_global` - can be adapted based on documentation, but is challenging and rarely supported on MES.
+- `ios_evpn_ethernet`  - can be adapted based on documentation, but is challenging and rarely supported on MES.
+- `ios_hsrp_interfaces` - HSRP is not present on many MES; VRRP is often used instead.
+- `ios_ospfv2` - OSPF is support depends on model and software version.
+- `ios_ospfv3` - OSPF is support depends on model and software version.
+- `ios_ospf_interfaces` - OSPF is support depends on model and software version.
+- `ios_bgp_global` - BGP is not on all MES; more common on higher-end models (MES5xxx) and certain software versions.
+- `ios_bgp_address_family` - BGP is not on all MES; more common on higher-end models.
+- `ios_vrf` - VRF is not on all MES; more common on higher-end models.
+- `ios_vrf_global` - VRF is not on all MES; more common on higher-end models.
+- `ios_vrf_interfaces` - VRF is not on all MES; more common on higher-end models.
+- `ios_vrf_address_family` - VRF is not on all MES; more common on higher-end models.
+- `ios_vxlan_vtep` - can be adapted based on documentation, but is challenging and rarely supported on MES.
 
 <!--start requires_ansible-->
 ## Ansible version compatibility
