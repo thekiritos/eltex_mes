@@ -1,5 +1,7 @@
 # Eltex MES Collection
 
+[![CI](https://github.com/nikitamishagin/eltex_mes/actions/workflows/tests.yml/badge.svg?branch=main&event=schedule)](https://github.com/nikitamishagin/eltex_mes/actions/workflows/tests.yml)
+
 **PROJECT UNDER DEVELOPMENT**
 
 🚀 Join the effort to build a dedicated Eltex Ansible collection!
