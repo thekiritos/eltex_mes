@@ -80,7 +80,7 @@ class TestMesConfigModule(TestMesModule):
         self.conn.get_diff = MagicMock(
             return_value=self.cliconf_obj.get_diff(src, self.running_config),
         )
-        commands = ["hostname foo", "interface GigabitEthernet0/0", "no ip address"]
+        commands = ["hostname foo", "interface vlan 1", "no ip address"]
         self.execute_module(changed=True, commands=commands)
 
     def test_mes_config_backup(self):
@@ -91,7 +91,7 @@ class TestMesConfigModule(TestMesModule):
     def test_mes_config_save_changed_true(self):
         src = load_fixture("mes_config_src.cfg")
         set_module_args(dict(src=src, save_when="changed"))
-        commands = ["hostname foo", "interface GigabitEthernet0/0", "no ip address"]
+        commands = ["hostname foo", "interface vlan 1", "no ip address"]
         self.conn.get_diff = MagicMock(
             return_value=self.cliconf_obj.get_diff(src, self.running_config),
         )
@@ -133,7 +133,7 @@ class TestMesConfigModule(TestMesModule):
 
     def test_mes_config_lines_w_parents(self):
         lines = ["shutdown"]
-        parents = ["interface GigabitEthernet0/0"]
+        parents = ["interface vlan 1"]
         set_module_args(dict(lines=lines, parents=parents))
         module = MagicMock()
         module.params = {"lines": lines, "parents": parents, "src": None}
@@ -146,7 +146,7 @@ class TestMesConfigModule(TestMesModule):
             ),
         )
 
-        commands = ["interface GigabitEthernet0/0", "shutdown"]
+        commands = ["interface vlan 1", "shutdown"]
         self.execute_module(changed=True, commands=commands)
 
     def test_mes_config_before(self):
@@ -198,7 +198,7 @@ class TestMesConfigModule(TestMesModule):
 
     def test_mes_config_replace_block(self):
         lines = ["description test string", "test string"]
-        parents = ["interface GigabitEthernet0/0"]
+        parents = ["interface vlan 1"]
         set_module_args(dict(lines=lines, replace="block", parents=parents))
 
         module = MagicMock()
@@ -223,7 +223,7 @@ class TestMesConfigModule(TestMesModule):
         self.conn.get_diff = MagicMock(
             return_value=self.cliconf_obj.get_diff(src, self.running_config),
         )
-        commands = ["hostname foo", "interface GigabitEthernet0/0", "no ip address"]
+        commands = ["hostname foo", "interface vlan 1", "no ip address"]
         self.execute_module(changed=True, commands=commands)
 
     def test_mes_config_match_none(self):
@@ -240,7 +240,7 @@ class TestMesConfigModule(TestMesModule):
 
     def test_mes_config_match_none2(self):
         lines = ["ip address 1.2.3.4 255.255.255.0", "description test string"]
-        parents = ["interface GigabitEthernet0/0"]
+        parents = ["interface vlan 1"]
         set_module_args(dict(lines=lines, parents=parents, match="none"))
 
         module = MagicMock()
@@ -264,7 +264,7 @@ class TestMesConfigModule(TestMesModule):
             "description test string",
             "shutdown",
         ]
-        parents = ["interface GigabitEthernet0/0"]
+        parents = ["interface vlan 1"]
         set_module_args(dict(lines=lines, parents=parents, match="strict"))
 
         module = MagicMock()
@@ -288,7 +288,7 @@ class TestMesConfigModule(TestMesModule):
             "description test string",
             "shutdown",
         ]
-        parents = ["interface GigabitEthernet0/0"]
+        parents = ["interface vlan 1"]
         set_module_args(dict(lines=lines, parents=parents, match="exact"))
 
         module = MagicMock()
